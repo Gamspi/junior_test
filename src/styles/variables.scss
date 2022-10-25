@@ -17,6 +17,10 @@ $mediaWideDesktop: '(min-width: #{ $wideDesktopBreakpoint })';
 $cWhite: #ffffff;
 $cLightGrey: #EEEEEE;
 $cGrey: #ACAFB8;
+
 // ----------SIZES
 $headerHeight: 6.8rem;
 $footerHeight: 2.5rem;
+
+//-------------BACKGROUNDS
+$bLightGrey: $cLightGrey;

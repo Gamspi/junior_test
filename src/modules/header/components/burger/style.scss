@@ -2,11 +2,11 @@
 
 .burger {
   position: relative;
-  width: 3.3rem;
-  height: 2.0rem;
+  width: 3rem;
+  height: 2rem;
   display: flex;
   align-items: center;
-  margin-bottom: .3rem;
+  margin-bottom: .512rem;
 
   &:after {
     position: absolute;
@@ -26,8 +26,11 @@
   }
 
   div, &:after, &:before {
-    border-bottom: .2rem solid $cWhite;
+    height: .24rem;
+    border-radius: .3rem;
+    background: $bLightGrey;
     width: 100%;
+
   }
 
   @include minMediaTablet {
