@@ -1,25 +1,5 @@
 extends  ../../layout/layout
-include  ../../components/simpleButton/simpleButton
-
 block variables
   -
     let title = 'Welcome to Start Template'
 block content
-  .main-content
-    .main-content__example
-      .main-example
-        .main-example__item
-          p.main-example__text Example of image:
-          img.main-example__image(src='/src/images/pictures/example.jpg' alt='example image')   
-        .main-example__item
-          p.main-example__text Example of button component usage:
-          .main-example__button
-            +simpleButton('Go to About page', '/about.html')
-        .main-example__item.j-example-item
-          p.main-example__text Example of javascript code:
-          .main-example__button.j-example-button
-            +simpleButton('Change border')         
-          img.main-example__paint.j-example-picture(src='/src/images/paints/giraffe.svg' alt='example paint') 
-
-
-
