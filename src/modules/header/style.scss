@@ -1,8 +1,14 @@
 @import "modules/index";
+@import "components/index";
+
 .header {
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
   border-bottom: .1rem solid rgba(255, 255, 255, 0.01);
+
+  &__nav {
+    display: none;
+  }
 }

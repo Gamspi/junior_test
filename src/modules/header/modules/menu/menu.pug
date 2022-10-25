@@ -1,6 +1,5 @@
-extends constants
-block content
+mixin menu(menuItems)
     ul.menu
         each item in menuItems
-            li.menu__item
-                a.menu__link(href=item.href class=isActive&&'_active')=item.label
+            li.menu__item(class=item.isActive && '_active')
+                a.menu__link(href=item.href)=item.label

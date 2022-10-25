@@ -1,5 +1,8 @@
-header.header
-    .header__logo
+mixin header (nav)
+    include modules/menu/menu
+    header.header
+    a.header__logo(href="/")
+        include components/logo/logo
     nav.header__nav
-        include modules/menu/menu
+        +menu(nav)
     .header__burger
