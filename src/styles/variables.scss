@@ -1,5 +1,7 @@
 // ----------FONTS
 $primaryFont: 'Roboto', sans-serif;
+$fInter: 'Inter', sans-serif;
+$fPoppins: 'Poppins', sans-serif;
 
 // ----------BREAKPOINTS
 $mobileBreakpoint: 360;
@@ -13,10 +15,8 @@ $mediaWideDesktop: '(min-width: #{ $wideDesktopBreakpoint })';
 
 // ----------COLORS
 $cWhite: #ffffff;
-$cRed: #DE3163;
-$cBlue: #31bade;
-$primary: #00b1a5;
-
+$cLightGrey: #EEEEEE;
+$cGrey: #ACAFB8;
 // ----------SIZES
-$headerHeight: 6.5rem;
+$headerHeight: 6.8rem;
 $footerHeight: 2.5rem;

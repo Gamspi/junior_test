@@ -3,9 +3,12 @@
 @import '../../styles/mixns';
 @import '../../styles/scaffolding';
 @import '../../styles/animations';
+@import '../../styles/templates';
 @import "../../components/index";
 @import "../../layout/style";
+
 @import "src/modules/index";
+@import "modules/index";
 
 .index{
 

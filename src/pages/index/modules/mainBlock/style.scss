@@ -1,0 +1,19 @@
+@import "components/searchInput/style";
+.main-block {
+  margin-top: -$headerHeight;
+  background-image: url('/src/images/mainBlock/mainBlockBG.webp');
+  color: $cWhite;
+  padding-top: 12.5rem;
+  padding-bottom: 9.9rem;
+
+  &__title {
+    color: $cLightGrey;
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: -2%;
+  }
+
+  &__description {
+    color: $cGrey;
+  }
+}
