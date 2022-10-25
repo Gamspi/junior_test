@@ -1,0 +1,26 @@
+.search-input {
+  &__body {
+    padding: 1rem 1.4rem 1.1rem;
+    background: $bLightGrey;
+    border-radius: .8rem;
+    display: flex;
+  }
+
+  &__input {
+    background: none;
+    color: $cDarkGrey;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 180%;
+    width: 100%;
+  }
+
+  &__btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-image: url('/src/images/svg/search-icon.svg');
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+}

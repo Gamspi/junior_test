@@ -4,7 +4,7 @@ $fInter: 'Inter', sans-serif;
 $fPoppins: 'Poppins', sans-serif;
 
 // ----------BREAKPOINTS
-$mobileBreakpoint: 360;
+$mobileBreakpoint: 320;
 $tabletBreakpoint: 768;
 $desktopBreakpoint: 1024;
 $wideDesktopBreakpoint: 1920;
@@ -17,9 +17,10 @@ $mediaWideDesktop: '(min-width: #{ $wideDesktopBreakpoint })';
 $cWhite: #ffffff;
 $cLightGrey: #EEEEEE;
 $cGrey: #ACAFB8;
+$cDarkGrey: #4C526A;
 
 // ----------SIZES
-$headerHeight: 6.8rem;
+$headerHeight: 6.9rem;
 $footerHeight: 2.5rem;
 
 //-------------BACKGROUNDS
