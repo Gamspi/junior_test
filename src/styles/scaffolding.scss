@@ -16,6 +16,8 @@ body {
   overflow-y: scroll;
   font-family: $primaryFont;
   min-height: 100vh;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
 }
 
 html, body {
@@ -73,11 +75,7 @@ a:hover {
   cursor: pointer;
   text-decoration: none;
 }
-ul {
-  font-size: 1.6rem;
-  line-height: 1.8rem;
-  margin-bottom: 1.8rem;  
-}
+
 li {
   list-style: none;
   font-size: inherit;
@@ -92,45 +90,31 @@ h1 {
   font-size: 2.8rem;
   line-height: 3.2rem;
   font-weight: bold;
-  margin-bottom: 3.2rem;
 }
 h2 {
   font-size: 2.4rem;
   line-height: 3rem;
-  font-weight: bold;  
-  margin-bottom: 3rem;
+  font-weight: bold;
 }
 h3 {
   font-size: 2.2rem;
   line-height: 2.8rem;
-  margin-bottom: 2.8rem;
 }
 h4 {
   font-size: 2rem;
   line-height: 2.4rem;
-  margin-bottom: 2.4rem;
+
 }
 h5 {
   font-size: 1.8rem;
   line-height: 2.2rem;
-  margin-bottom: 2.2rem;
+
 }
 h6 {
-  font-size: 1.6rem;
   line-height: 2rem;
-  margin-bottom: 2rem;
 }
-p {
-  font-size: 1.6rem;
-  line-height: 1.8rem;
-  margin-bottom: 1.8rem;
-}
-a {
-  font-size: 1.6rem;
-  line-height: 1.8rem;
-  margin-bottom: 1.8rem;
-  color: $cBlue;
-}
+
+
 textarea, input, select {
   resize: none;
 

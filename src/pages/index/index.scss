@@ -7,36 +7,6 @@
 @import "../../layout/style";
 @import "src/modules/index";
 
-.main-content {
-  padding: 1.6rem;
-}
+.index{
 
-.main-example {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  &__item {
-    border: 0.2rem solid $primary;
-    padding: 1.6rem;
-    width: 25%;
-    min-width: 30rem;
-    margin: 0 0.8rem 1.6rem;
-  }
-  &__image {
-    width: 100%;
-    max-width: 25rem;
-  }
-  &__button {
-    width: 100%;
-    max-width: 30rem;
-    margin: 1.6rem 0;
-  }
-  &__paint {
-    margin: 1.6rem auto;
-    width: 20rem;
-    height: 20rem;
-    border: 2rem solid $cRed;
-    transition: border-color .15s ease;
-  }
 }
