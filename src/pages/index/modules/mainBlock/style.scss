@@ -10,10 +10,18 @@
     color: $cLightGrey;
     font-size: 2rem;
     line-height: 3rem;
-    letter-spacing: -2%;
+    text-align: center;
+    font-weight: 600;
+    font-family: $fPoppins;
+
   }
 
   &__description {
     color: $cGrey;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 138%;
+    font-family: $fInter;
   }
 }
