@@ -1,0 +1,6 @@
+extends constants
+block content
+    ul.menu
+        each item in menuItems
+            li.menu__item
+                a.menu__link(href=item.href class=isActive&&'_active')=item.label
