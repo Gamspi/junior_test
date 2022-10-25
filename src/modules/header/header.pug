@@ -1,8 +1,9 @@
 mixin header (nav)
     include modules/menu/menu
     header.header
-    a.header__logo(href="/")
-        include components/logo/logo
-    nav.header__nav
-        +menu(nav)
-    .header__burger
+        .header__container.contaner
+            a.header__logo(href="/")
+                include components/logo/logo
+            nav.header__nav
+                +menu(nav)
+            .header__burger
