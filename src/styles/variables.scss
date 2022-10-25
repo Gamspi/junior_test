@@ -1,0 +1,22 @@
+// ----------FONTS
+$primaryFont: 'Roboto', sans-serif;
+
+// ----------BREAKPOINTS
+$mobileBreakpoint: 360;
+$tabletBreakpoint: 768;
+$desktopBreakpoint: 1024;
+$wideDesktopBreakpoint: 1920;
+
+$mediaTablet: '(min-width: #{ $tabletBreakpoint })';
+$mediaDesktop: '(min-width: #{ $desktopBreakpoint })';
+$mediaWideDesktop: '(min-width: #{ $wideDesktopBreakpoint })';
+
+// ----------COLORS
+$cWhite: #ffffff;
+$cRed: #DE3163;
+$cBlue: #31bade;
+$primary: #00b1a5;
+
+// ----------SIZES
+$headerHeight: 6.5rem;
+$footerHeight: 2.5rem;

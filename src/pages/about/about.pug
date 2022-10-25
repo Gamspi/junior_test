@@ -1,0 +1,13 @@
+extends  ../../layout/layout
+
+block variables
+  -
+    let title = 'About Page'
+block content
+  .about-content
+    h1.about-content__title Welcome to Start Template
+    h2.about-content__subtitle This is Webpack + TS + SCSS + Pug base template.
+    p.about-content__text Before starting work, read the file README.md - it contains a description of the project structure and useful links for developers
+    include modules/itemList/itemList
+    a.about-content__link(href='/') Go back to main page    
+

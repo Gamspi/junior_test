@@ -1,0 +1,38 @@
+@import "variables";
+
+@mixin minMediaMobile {
+  @media (min-width: $mobileBreakpoint + px) {
+    @content
+  }
+};
+
+@mixin minMediaTablet {
+  @media (min-width: $tabletBreakpoint + px) {
+    @content
+  }
+};
+
+@mixin minMediaDesktop {
+  @media (min-width: $desktopBreakpoint + px) {
+    @content
+  }
+};
+
+@mixin minMediaMaxDesktop {
+  @media (min-width: $wideDesktopBreakpoint + px) {
+    @content
+  }
+};
+
+@mixin htmlFZ ($mobile:320, $tablet: 768, $desktop: 1024,$maxDesktop: 1920) {
+    font-size: calc(100vw / $mobile * 10);
+    @include minMediaTablet {
+      font-size: calc(100vw / $tablet * 10);
+    }
+    @include minMediaDesktop {
+      font-size: calc(100vw / $desktop * 10);
+    }
+    @include minMediaMaxDesktop {
+      font-size: 10px;
+    }
+}

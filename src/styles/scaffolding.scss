@@ -1,0 +1,145 @@
+@import "src/styles/variables";
+@import "src/styles/mixns";
+
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  margin: 0;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  font-family: $primaryFont;
+  min-height: 100vh;
+}
+
+html, body {
+  word-break: break-word;
+}
+
+html {
+  // 1rem === 10px
+  font-size: calc(100vw / $mobileBreakpoint * 10);
+  @include minMediaTablet {
+    font-size: calc(100vw / $tabletBreakpoint * 10);
+  }
+  @include minMediaDesktop {
+    font-size: calc(100vw / $desktopBreakpoint * 10);
+  }
+  @include minMediaMaxDesktop {
+    font-size: calc(100vw / $wideDesktopBreakpoint * 10);
+  }
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  display: block;
+}
+
+button {
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+
+}
+
+nav, footer, header {
+  display: block;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+ul {
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  margin-bottom: 1.8rem;  
+}
+li {
+  list-style: none;
+  font-size: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2.8rem;
+  line-height: 3.2rem;
+  font-weight: bold;
+  margin-bottom: 3.2rem;
+}
+h2 {
+  font-size: 2.4rem;
+  line-height: 3rem;
+  font-weight: bold;  
+  margin-bottom: 3rem;
+}
+h3 {
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+  margin-bottom: 2.8rem;
+}
+h4 {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+h5 {
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  margin-bottom: 2.2rem;
+}
+h6 {
+  font-size: 1.6rem;
+  line-height: 2rem;
+  margin-bottom: 2rem;
+}
+p {
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+a {
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  margin-bottom: 1.8rem;
+  color: $cBlue;
+}
+textarea, input, select {
+  resize: none;
+
+  &:active, &:hover, &:focus {
+    outline: 0;
+    outline-offset: 0;
+  }
+}
+
+main {
+  flex: 1 0 100%;
+}
