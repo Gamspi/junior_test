@@ -1,18 +1,20 @@
-.search-input {
+.search {
   &__body {
-    padding: 1rem 1.4rem 1.1rem;
+    padding: 0.9rem 1.4rem 1rem;
     background: $bLightGrey;
     border-radius: .8rem;
     display: flex;
   }
 
   &__input {
+    font-family: inherit;
     background: none;
     color: $cDarkGrey;
     font-size: 1.6rem;
     font-weight: 500;
-    line-height: 180%;
+    line-height: 100%;
     width: 100%;
+    padding-left: 1.2rem;
   }
 
   &__btn {
