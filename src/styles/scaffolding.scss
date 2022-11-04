@@ -14,8 +14,8 @@ body {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  font-family: $primaryFont;
   min-height: 100vh;
+  font-family: $fInter;
 }
 
 html, body {
@@ -24,9 +24,9 @@ html, body {
 
 html {
   // 1rem === 10px
-  font-size: calc(100vw / $mobileBreakpoint * 10);
+  font-size: calc(100vmin / $mobileBreakpoint * 10);
   @include minMediaTablet {
-    font-size: calc(100vw / $tabletBreakpoint * 10);
+    font-size: calc(100vmin / $tabletBreakpoint * 10);
   }
   @include minMediaDesktop {
     font-size: calc(100vw / $desktopBreakpoint * 10);
