@@ -1,0 +1,29 @@
+.trusted {
+  &__container {
+    padding: 3rem 1.76rem 4rem;
+    background: rgba(255, 0, 0, 0.1);
+  }
+
+  &__title {
+    font-family: $fInter;
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 172%;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 3.26rem;
+    align-items: center;
+    row-gap: 3rem;
+    justify-content: space-between;
+  }
+
+  &__item {
+    display: flex;
+
+  }
+}
