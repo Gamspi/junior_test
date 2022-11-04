@@ -28,21 +28,7 @@
     margin-left: .9rem;
   }
 
-  &__link {
-    font-weight: 500;
-    font-size: 1.4rem;
-    line-height: 138%;
-    color: $cBlue;
-    position: relative;
-    &:after{
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-bottom: .1rem solid $cBlue ;
-    }
-  }
+
 
   &__list {
     margin-bottom: 1.9rem;
