@@ -128,3 +128,9 @@ textarea, input, select {
 main {
   flex: 1 0 100%;
 }
+
+.container{
+  $padding: 1.5rem;
+  padding-left: $padding;
+  padding-right: $padding;
+}
