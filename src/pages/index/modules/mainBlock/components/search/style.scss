@@ -4,6 +4,7 @@
     background: $bLightGrey;
     border-radius: .8rem;
     display: flex;
+    margin-bottom: 1.4rem;
   }
 
   &__input {
@@ -24,5 +25,12 @@
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
+  }
+  &__footer{
+    font-family: $fInter;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 172%;
   }
 }
