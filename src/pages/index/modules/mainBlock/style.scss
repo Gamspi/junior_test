@@ -3,12 +3,12 @@
 .main-block {
   margin-top: -$headerHeight;
   background-image: url('/src/images/mainBlock/mainBlockBG.webp');
-  color: $cWhite;
+  color: $primaryColor;
   padding-top: 12.5rem;
   padding-bottom: 9.8rem;
 
   &__title {
-    color: $cWhite;
+    color: $primaryColor;
     font-size: 2rem;
     line-height: 3rem;
     text-align: center;
@@ -49,7 +49,7 @@
       right: 0;
       bottom: -.1rem;
       width: 100%;
-      border-bottom: .1rem solid $cWhite;
+      border-bottom: .1rem solid $primaryColor;
     }
   }
 }
