@@ -5,10 +5,10 @@
   background-image: url('/src/images/mainBlock/mainBlockBG.webp');
   color: $cWhite;
   padding-top: 12.5rem;
-  padding-bottom: 9.9rem;
+  padding-bottom: 9.8rem;
 
   &__title {
-    color: $cLightGrey;
+    color: $cWhite;
     font-size: 2rem;
     line-height: 3rem;
     text-align: center;
@@ -27,6 +27,29 @@
   }
 
   &__search {
+    padding-bottom: 5rem;
+  }
 
+  &__info {
+    font-family: $fInter;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 172%;
+    text-align: center;
+    padding: 0 1.1rem 0;
+  }
+
+  &__link-see {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -.1rem;
+      width: 100%;
+      border-bottom: .1rem solid $cWhite;
+    }
   }
 }
