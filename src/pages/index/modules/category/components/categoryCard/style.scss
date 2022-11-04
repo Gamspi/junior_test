@@ -1,0 +1,28 @@
+.category-card {
+  position: relative;
+  width: 13.9rem;
+  height: 7rem;
+  overflow: hidden;
+  border-radius: .8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__text {
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 138%;
+    color: $primaryColor;
+    z-index: 1;
+  }
+
+  &__img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}

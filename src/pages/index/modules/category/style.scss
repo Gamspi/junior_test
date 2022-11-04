@@ -1,0 +1,24 @@
+@import "components/index";
+
+.category {
+  padding: 2.9rem 0;
+
+  &__container {
+    padding: 0 1.6rem;
+  }
+
+  &__title {
+    font-family: $fPoppins;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 3rem;
+    color: $secondaryColor;
+    margin-bottom: 2rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
