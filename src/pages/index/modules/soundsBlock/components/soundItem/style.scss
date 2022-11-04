@@ -1,0 +1,41 @@
+@import "components/index";
+.sound-item {
+  display: flex;
+  align-items: center;
+  padding: .7rem .5rem;
+
+  &__btn-more,&__btn-download {
+    display: block;
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+
+  &__btn-play {
+    margin-right: 1.4rem;
+  }
+
+  &__btn-download {
+    margin-right: 1.3rem;
+  }
+
+  &__info {
+    margin-top: 0.2rem;
+    flex-grow: 1;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 138%;
+    margin-bottom: 0.2rem;
+    margin-top: -0.1rem;
+
+  }
+
+  &__time {
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 172%;
+    color: $cLightGreyBlue;
+  }
+}

@@ -15,8 +15,9 @@ $mediaWideDesktop: '(min-width: #{ $wideDesktopBreakpoint })';
 // ----------COLORS
 $primaryColor: #EEEEEE;
 $secondaryColor: #020D37;
-$cTab: #4C526A;
+$cLightGreyBlue: #4C526A;
 $cGrey: #ACAFB8;
+
 $cDarkGrey: #4C526A;
 
 // ----------SIZES
@@ -25,3 +26,5 @@ $footerHeight: 2.5rem;
 
 //-------------BACKGROUNDS
 $bPrimary: $primaryColor;
+$bPlay: #CDD6F9;
+$bBlue: #0432DF;

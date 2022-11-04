@@ -1,10 +1,15 @@
-.sounds-block
-    .sounds-block__container
-        h2.sounds-block__title Best sound effects for youtube videos
-        .sounds-block__header
-            .sounds-block__tabs
-                include modules/soundsTabs/soundsTabs
-            .sounds-block__filter
-                include modules/soundsFolter/soundsFolter
-        ul.sounds-block__list
-            li.sounds-block__item
+extends constants
+include components/soundItem/soundItem
+block content
+    .sounds-block
+        .sounds-block__container
+            h2.sounds-block__title Best sound effects for youtube videos
+            .sounds-block__header
+                .sounds-block__tabs
+                    include modules/soundsTabs/soundsTabs
+                .sounds-block__filter
+                    include modules/soundsFolter/soundsFolter
+            ul.sounds-block__list
+              each item in sounds
+                  li.sounds-block__item
+                      +soundItem(item)

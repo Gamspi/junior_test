@@ -1,0 +1,14 @@
+mixin soundItem(src)
+    .sound-item.j-audio
+        audio.j-audio-track(src=src)
+        .sound-item__btn-play
+            include components/playButton/playButton
+        .sound-item__info
+            .sound-item__name Sound name
+            .sound-item__time.j-audio-time 0:12
+        a.sound-item__btn-download(target='_blank' src='#')
+            svg
+                use(xlink:href='#ico-download')
+        a.sound-item__btn-more(src='#')
+            svg
+                use(xlink:href='#ico-more')

@@ -1,4 +1,5 @@
 @import "modules/index";
+@import "components/index";
 
 .sounds-block {
   padding: 5rem 0;
@@ -20,6 +21,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 1.7rem;
   }
 
   &__tabs {
@@ -31,6 +33,8 @@
   }
 
   &__item {
-
+    &:not(:last-child){
+      margin-bottom: 0.3rem;
+    }
   }
 }

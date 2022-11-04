@@ -1,0 +1,60 @@
+.play-button {
+  border-radius: 50%;
+  background: $bPlay;
+  position: relative;
+  width: 3.4rem;
+  height: 3.4rem;
+  transition: background-color .15s linear;
+
+  &:after {
+    content: '';
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: $bBlue;
+    display: inline-block;
+    border-radius: 50%;
+    transform: scale(0, 0);
+    transition: transform .15s linear;
+  }
+
+  &._click {
+    &:after {
+      transition: transform .15s linear, opacity .15s linear;
+      transform: scale(1, 1);
+      opacity:.5;
+    }
+  }
+
+  &._play &__pause-icon {
+    opacity: 1;
+  }
+
+  &._play &__play-icon {
+    opacity: 0;
+  }
+
+  &__play-icon, &__pause-icon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: opacity .1s linear;
+    transition-delay: .15s;
+  }
+
+  &__play-icon {
+    padding: .7rem .8rem .7rem 1.2rem;
+  }
+
+  &__pause-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin: auto;
+    opacity: 0;
+  }
+}
