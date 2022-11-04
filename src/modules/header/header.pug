@@ -1,9 +1,10 @@
 mixin header (nav)
     include modules/menu/menu
+    include components/logo/logo
     header.header
         .header__container
             a.header__logo(href="/")
-                include components/logo/logo
+                +logo()
             nav.header__nav
                 +menu(nav)
             .header__burger

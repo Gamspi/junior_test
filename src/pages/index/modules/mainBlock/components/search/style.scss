@@ -18,15 +18,11 @@
     padding-left: 1.2rem;
   }
 
-  &__btn {
+  &__btn,&__svg {
     width: 2.5rem;
     height: 2.5rem;
-    background-image: url('/src/images/svg/search-icon.svg');
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
   }
-  &__footer{
+  &__footer {
     font-family: $fInter;
 
     font-weight: 400;

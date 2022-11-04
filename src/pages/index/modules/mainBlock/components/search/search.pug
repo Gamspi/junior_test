@@ -2,6 +2,8 @@ mixin search(text)
     form.search(action='' novalidate)
         .search__body
             button.search__btn(type='submit')
+                svg.search__svg
+                    use(xlink:href='#ico-search')
             input.search__input(type='text' placeholder='Search sound effects')
         p.search__footer=text
 
