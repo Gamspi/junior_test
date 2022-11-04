@@ -17,7 +17,7 @@ $primaryColor: #EEEEEE;
 $secondaryColor: #020D37;
 $cLightGreyBlue: #4C526A;
 $cGrey: #ACAFB8;
-
+$cBlue: #0432DF;
 $cDarkGrey: #4C526A;
 
 // ----------SIZES
@@ -27,4 +27,4 @@ $footerHeight: 2.5rem;
 //-------------BACKGROUNDS
 $bPrimary: $primaryColor;
 $bPlay: #CDD6F9;
-$bBlue: #0432DF;
+$bBlue: $cBlue;
