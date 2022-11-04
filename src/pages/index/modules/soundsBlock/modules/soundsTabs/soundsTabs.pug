@@ -1,0 +1,7 @@
+extends constants
+include components/soundTab/soundTab
+block content
+    ul.sounds-tabs
+        each tab in tabs
+            li.sounds-tabs__item
+                +soundTab(tab.label)
