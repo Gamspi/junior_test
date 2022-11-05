@@ -1,7 +1,16 @@
-.testimonials
-    .testimonials__container
-        .testimonials__sup-title
-        .testimonials__title
-        .testimonials__list
-            ul.testimonials__wrapper
-                li.testimonials__item
+extends constants
+include components/testimonialsItem/testimonialsItem
+include ../../../../components/pagination/pagination
+block content
+    .testimonials
+        .testimonials__container
+            .testimonials__header
+                .testimonials__sup-title TESTIMONIALS
+                .testimonials__title Hear good experiences from our customers
+            .testimonials__list
+                ul.testimonials__wrapper
+                    each item in testimonialsCards
+                        li.testimonials__item
+                            +testimonialsItem(item.text,item.name,item.job,item.src)
+            .testimonials__pagination
+                +pagination()

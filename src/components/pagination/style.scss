@@ -1,0 +1,16 @@
+.pagination {
+  display: flex;
+  column-gap: 1rem;
+
+  ._active {
+    background: $bgGray;
+  }
+
+  &__item {
+    $size: .8rem;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    background: $bPrimary;
+  }
+}

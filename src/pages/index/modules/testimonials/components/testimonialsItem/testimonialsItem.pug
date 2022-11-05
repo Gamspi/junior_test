@@ -1,0 +1,10 @@
+mixin testimonialsItem(text, name, job, src)
+    .testimonials-item
+        .testimonials-item__quotes-ico
+            svg
+                use(xlink:href='#ico-quotes')
+        quote.testimonials-item__quote=text
+        .testimonials-item__avatar
+            img.testimonials-item__img(srt=src alt='')
+        .testimonials-item__author=name
+        .testimonials-item__job=job

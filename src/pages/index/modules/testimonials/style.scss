@@ -1,1 +1,54 @@
 @import "components/index";
+
+.testimonials {
+  padding: 5rem 0;
+
+  &__container {
+    padding: 0 1.65rem;
+  }
+
+  &__header {
+    width: 26.1rem;
+    margin: 0 auto 4rem;
+  }
+
+  &__sup-title {
+    font-family: $fPoppins;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    color: $cGold;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-family: $fPoppins;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 3rem;
+    color: $secondaryColor;
+    text-align: center;
+
+  }
+
+  &__list {
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+
+  &__wrapper {
+    display: flex;
+
+  }
+
+  &__item {
+    flex: 0 0 28.7rem;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+  }
+}

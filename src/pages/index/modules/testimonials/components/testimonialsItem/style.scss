@@ -1,0 +1,50 @@
+.testimonials-item {
+  text-align: center;
+  border: 1px solid $bPureWhite;
+  border-radius: 8px;
+  padding: 1.917rem 1.1rem 3rem;
+  &__quotes-ico {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 0.9rem;
+  }
+
+  &__quote {
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 172%;
+    color: $cLightGreyBlue;
+    margin-bottom: 2.51rem;
+    display: inline-block;
+  }
+
+  &__author {
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 172%;
+    color: $secondaryColor;
+    margin-bottom: .1rem;
+  }
+  &__job{
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 172%;
+    color: $cGrey;
+  }
+  &__avatar{
+    $size: 7rem;
+    width: $size;
+    height: $size;
+    background: #000;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+
+  }
+
+  &__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
