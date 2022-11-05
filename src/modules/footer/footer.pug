@@ -1,1 +1,16 @@
-footer.footer
+extends constants
+include components/footerMenuItem/footerMenuItem
+block content
+    footer.footer
+        .footer__container
+            .footer__info
+                .footer__logo
+                    svg
+                        use(xlink:href='#ico-footer-logo')
+                .footer__description WavesCo is a platform for providing premium sound effects for Youtube videos, movies and many more.
+                .footer__copy WavesCo ©2021, All rights reserved
+            nav.footer__nav
+                ul.footer__list
+                    each item in footerList
+                        li.footer__item
+                            +footerMenuItem(item.title, item.links)

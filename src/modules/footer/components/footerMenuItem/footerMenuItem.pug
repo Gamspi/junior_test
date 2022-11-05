@@ -1,0 +1,7 @@
+mixin footerMenuItem (title, links)
+    .footer-menu-item
+        h5.footer-menu-item__title=title
+        ul.footer-menu-item__list
+            each item in links
+                li.footer-menu-item__item-link
+                    a.footer-menu-item__link(href=item.href || '#')=item.label

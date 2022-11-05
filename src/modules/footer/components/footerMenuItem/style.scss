@@ -1,0 +1,21 @@
+.footer-menu-item{
+  &__title{
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 138%;
+    color: $primaryColor;
+    margin-bottom: 1.2rem;
+  }
+  &__list{
+
+  }
+  &__item-link{
+    margin-bottom: .8rem;
+  }
+  &__link{
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 172%;
+    color: $cGrey;
+  }
+}
