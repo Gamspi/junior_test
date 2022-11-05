@@ -7,10 +7,10 @@ block content
             .testimonials__header
                 .testimonials__sup-title TESTIMONIALS
                 .testimonials__title Hear good experiences from our customers
-            .testimonials__list
-                ul.testimonials__wrapper
+            .testimonials__list.j-swiper
+                ul.testimonials__wrapper.swiper-wrapper
                     each item in testimonialsCards
-                        li.testimonials__item
+                        li.testimonials__item.swiper-slide
                             +testimonialsItem(item.text,item.name,item.job,item.src)
             .testimonials__pagination
-                +pagination()
+                +pagination('j-pagination-testimonials')

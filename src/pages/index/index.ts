@@ -1,6 +1,7 @@
 import './index.scss'
 import { AudioController } from '../../ts/AudioController'
 import { ButtonClick } from '../../ts/ButtonClick'
+import CardSwiper from '../../ts/Swiper'
 
 class Index {
   constructor () {
@@ -21,6 +22,11 @@ class Index {
     document.querySelectorAll('.j-button-click')
       .forEach(block => {
         const audioController = new ButtonClick(block as HTMLButtonElement)
+        audioController.init()
+      })
+    document.querySelectorAll('.j-swiper')
+      .forEach(block => {
+        const audioController = new CardSwiper(block as HTMLButtonElement)
         audioController.init()
       })
   }
