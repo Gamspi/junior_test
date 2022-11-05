@@ -4,6 +4,6 @@ block content
         .trusted__container
             h2.trusted__title Trusted by top Youtuber and Production House
             ul.trusted__list
-                each src in youtuberIcons
+                each item in youtuberIcons
                     li.trusted__item
-                        img.trusted__img(src=src)
+                        img.trusted__img(src=item.src class=item.icoClass)
