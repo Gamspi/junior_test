@@ -2,15 +2,16 @@
   display: flex;
   column-gap: 1rem;
 
-  ._active {
-    background: $bgGray;
-  }
 
-  &__item {
+
+  .swiper-pagination-bullet {
     $size: .8rem;
     width: $size;
     height: $size;
     border-radius: 50%;
     background: $bPrimary;
+    &-active {
+      background: $bgGray;
+    }
   }
 }
