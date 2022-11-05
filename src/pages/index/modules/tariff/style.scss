@@ -30,12 +30,23 @@
 
   &__cards {
     width: 28.7rem;
-    margin: 0 auto;
+    margin: 0 auto 2.4rem;
   }
 
   &__item {
     &:not(:last-child) {
       margin-bottom: 2rem;
     }
+  }
+
+  &__footer {
+    text-align: center;
+  }
+
+  &__info {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 180%;
+    color: $primaryColor;
   }
 }
