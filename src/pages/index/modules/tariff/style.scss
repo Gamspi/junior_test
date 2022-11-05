@@ -1,19 +1,41 @@
 @import "components/index";
 
 .tariff {
-  &__container {
+  background: $bBlue;
+  color: $primaryColor;
+  padding: 5rem 0;
 
+  &__container {
+    padding: 0 1.45rem;
+  }
+
+  &__header {
+    margin-bottom: 4rem;
+    text-align: center;
   }
 
   &__title {
+    font-family: $fPoppins;
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: 160%;
+    margin-bottom: .8rem;
   }
-  &__sub-title{
 
+  &__sub-title {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 180%;
   }
-  &__cards{
 
+  &__cards {
+    width: 28.7rem;
+    margin: 0 auto;
   }
-  &__item{
 
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
   }
 }
