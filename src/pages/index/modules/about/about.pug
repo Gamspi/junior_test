@@ -1,0 +1,11 @@
+extends constants
+include component/aboutItem/aboutItem
+block content
+    .about
+        .about__container
+            h3.about__sup-title WHY US?
+            h2.about__title We are provide the best quality sound effects without copyright.
+            ul.about__list
+              each item in aboutCards
+                li.about__item
+                    +aboutItem(item.id, item.title, item.description)

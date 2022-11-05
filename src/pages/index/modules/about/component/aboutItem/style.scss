@@ -1,0 +1,24 @@
+.about-item {
+  width: 24.6rem;
+  margin: 0 auto;
+  &__icon {
+    width: 5.6rem;
+    height: 5.6rem;
+    margin-bottom: 2.2rem;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 138%;
+    color: $secondaryColor;
+    margin-bottom: 0.4rem;
+  }
+
+  &__description {
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 172%;
+    color: $cLightGreyBlue;
+  }
+}

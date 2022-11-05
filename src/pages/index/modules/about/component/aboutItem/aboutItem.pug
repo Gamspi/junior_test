@@ -1,0 +1,7 @@
+mixin aboutItem(id, title, description)
+    .about-item
+        .about-item__icon
+            svg
+                use(xlink:href='#'+id)
+        h4.about-item__title=title
+        .about-item__description=description

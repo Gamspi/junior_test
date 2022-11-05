@@ -1,0 +1,32 @@
+@import "component/index";
+
+.about {
+  padding: 5.1rem 0 5rem;
+  &__container {
+    padding: 0 2.7rem;
+  }
+
+  &__sup-title {
+    font-family: $fPoppins;
+    color: $cGold;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    text-align: center;
+    margin-bottom: 1.7rem;
+  }
+
+  &__title {
+    text-align: center;
+    font-family: $fPoppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 3rem;
+    color: $secondaryColor;
+    margin-bottom: 4.7rem;
+  }
+  &__item:not(:last-child){
+    margin-bottom: 2.8rem;
+  }
+}
