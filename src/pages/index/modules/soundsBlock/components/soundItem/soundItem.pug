@@ -1,3 +1,4 @@
+include ../../../../../../components/useSvg/useSvg
 mixin soundItem(src)
     .sound-item.j-audio
         audio.j-audio-track(src=src)
@@ -7,8 +8,6 @@ mixin soundItem(src)
             .sound-item__name Sound name
             .sound-item__time.j-audio-time 0:12
         a.sound-item__btn-download(target='_blank' src='#')
-            svg
-                use(xlink:href='#ico-download')
+            +useSvg('ico-download')
         a.sound-item__btn-more(src='#')
-            svg
-                use(xlink:href='#ico-more')
+            +useSvg('ico-more')
