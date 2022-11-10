@@ -3,14 +3,18 @@
 .main-block {
   margin-top: -$headerHeight;
   background-image: url('/src/images/mainBlock/mainBlockBG.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
   color: $primaryColor;
   padding-top: 12.5rem;
   padding-bottom: 9.8rem;
+
   &__container {
     $padding: 1.5rem;
     padding-left: $padding;
     padding-right: $padding;
   }
+
   &__title {
     color: $primaryColor;
     font-size: 2rem;
