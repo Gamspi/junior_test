@@ -1,10 +1,12 @@
 @import "components/index";
+
 .sound-item {
   display: flex;
   align-items: center;
   padding: .7rem .5rem;
+  border-bottom: .1rem solid $bPureWhite;
 
-  &__btn-more,&__btn-download {
+  &__btn-more, &__btn-download {
     display: block;
     width: 3.4rem;
     height: 3.4rem;
@@ -29,7 +31,6 @@
     line-height: 138%;
     margin-bottom: 0.2rem;
     margin-top: -0.1rem;
-
   }
 
   &__time {
@@ -37,5 +38,29 @@
     font-size: 1.2rem;
     line-height: 172%;
     color: $cLightGreyBlue;
+  }
+
+  &__btn-like {
+    display: none;
+  }
+
+  @include minMediaTablet {
+    padding: .7rem 2.1rem 0;
+    &__btn-play {
+      margin-right: 2.9rem;
+    }
+    &__name {
+      margin-bottom: 0.4rem;
+    }
+    &__btn-more, &__btn-download, &__btn-like {
+      width: 3.6rem;
+      height: 3.6rem;
+    }
+    &__btn-download, &__btn-like {
+      margin-right: 2rem;
+    }
+    &__btn-like {
+      display: block;
+    }
   }
 }
