@@ -10,7 +10,7 @@ const configDev = {
       publicPath: PATH.dist
     }
   },
-  devtool: 'inline-source-map'
+  devtool: 'inline-source-map',
 
 }
 

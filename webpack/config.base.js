@@ -109,7 +109,7 @@ const configBase = {
 
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/,
         type: 'asset/resource',
         generator: {
           filename: 'images/[name][ext]'
