@@ -3,4 +3,7 @@
 .sounds-tabs {
   display: flex;
   column-gap: 1.2rem;
+  @include minMediaTablet {
+    column-gap: 2.8rem;
+  }
 }

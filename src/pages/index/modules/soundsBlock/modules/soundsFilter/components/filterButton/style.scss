@@ -1,0 +1,39 @@
+.filter-button {
+  $size: 3.6rem;
+  height: $size;
+  width: $size;
+  border-radius: .4rem;
+  background: $bPrimary;
+
+  &__text {
+    display: none;
+  }
+
+  @include minMediaTablet {
+    display: flex;
+    height: 4rem;
+    width: auto;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 1.6rem;
+    padding-left: 1.2rem;
+    padding-right: .6rem;
+    &__text {
+      display: inline;
+      white-space: nowrap;
+      flex: 0 0 auto;
+      font-family: $fInter;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 138%;
+    }
+    &__svg {
+      width: 3.6rem;
+    }
+  }
+}
+symbol#ico-filter{
+  width: 3.6rem;
+  height: 3.7rem;
+}

@@ -29,7 +29,6 @@
   }
 
 
-
   &__list {
     margin-bottom: 1.9rem;
   }
@@ -37,6 +36,17 @@
   &__item {
     &:not(:last-child) {
       margin-bottom: 0.3rem;
+    }
+  }
+
+  @include minMediaTablet {
+    &__container {
+      padding: 0 6rem;
+    }
+    &__title {
+      font-size: 2.4rem;
+      line-height: 160%;
+      margin-bottom: 1.5rem;
     }
   }
 }

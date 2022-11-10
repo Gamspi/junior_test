@@ -1,4 +1,5 @@
-mixin filterButton ()
+mixin filterButton (text)
     button.filter-button
+        span.filter-button__text=text
         svg.filter-button__svg
             use(xlink:href='#ico-filter')
