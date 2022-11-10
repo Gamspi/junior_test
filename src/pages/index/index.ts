@@ -9,11 +9,6 @@ class Index {
   }
 
   init () {
-    document.querySelectorAll('.j-example-item')
-      .forEach(block => {
-        // const Container = new ExampleCode(block as HTMLElement)
-        // Container.init()
-      })
     document.querySelectorAll('.j-audio')
       .forEach(block => {
         const audioController = new AudioController(block as HTMLDivElement)
