@@ -52,4 +52,7 @@
       transform: scale(0)
     }
   }
+  @include minMediaTablet{
+    height: 2rem;
+  }
 }

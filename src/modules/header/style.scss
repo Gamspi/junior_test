@@ -27,4 +27,10 @@
   &__logo {
     line-height: 0;
   }
+  @include minMediaTablet{
+    &__container{
+      padding-left: 6.019rem;
+      padding-right: 6.9rem;
+    }
+  }
 }
