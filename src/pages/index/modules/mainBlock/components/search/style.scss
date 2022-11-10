@@ -18,14 +18,22 @@
     padding-left: 1.2rem;
   }
 
-  &__btn,&__svg {
+  &__btn, &__svg {
     width: 2.5rem;
     height: 2.5rem;
   }
+
   &__footer {
     font-family: $fInter;
     font-weight: 400;
     font-size: 1.4rem;
     line-height: 172%;
+  }
+
+  @include minMediaTablet {
+    &__body {
+      padding: 2rem 1.9rem 1.6rem;
+      margin-bottom: 1rem;
+    }
   }
 }

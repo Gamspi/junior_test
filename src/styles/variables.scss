@@ -8,10 +8,6 @@ $tabletBreakpoint: 768;
 $desktopBreakpoint: 1024;
 $wideDesktopBreakpoint: 1920;
 
-$mediaTablet: '(min-width: #{ $tabletBreakpoint })';
-$mediaDesktop: '(min-width: #{ $desktopBreakpoint })';
-$mediaWideDesktop: '(min-width: #{ $wideDesktopBreakpoint })';
-
 // ----------COLORS
 $primaryColor: #EEEEEE;
 $secondaryColor: #020D37;
