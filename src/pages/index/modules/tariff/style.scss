@@ -65,7 +65,8 @@
     }
 
     &__item {
-      flex: 1 1 28rem ;
+      flex: 1 1 28rem;
+
       &:not(:last-child) {
         margin-bottom: 0;
       }
@@ -86,6 +87,21 @@
     &__info {
       font-size: 1.8rem;
       line-height: 189%;
+    }
+  }
+  @include minMediaDesktop {
+    padding: 6.5rem 0;
+    &__title {
+      font-size: 3.6rem;
+      line-height: 146.5%;
+      margin-bottom: 1.5rem;
+    }
+    &__header {
+      margin-bottom: 4.3rem;
+    }
+    &__cards {
+      width: 71.1rem;
+      margin-bottom: 4rem;
     }
   }
 }
