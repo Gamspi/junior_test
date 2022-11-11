@@ -25,6 +25,38 @@
     flex-grow: 1;
   }
 
+
+  &__btn-like {
+    display: none;
+  }
+
+  &__actions {
+    display: flex;
+  }
+
+  @include minMediaTablet {
+    padding: .7rem 2.1rem 0;
+    &__btn-play {
+      margin-right: 2.9rem;
+    }
+    &__actions {
+      flex-shrink: 0;
+    }
+    &__btn-more, &__btn-download, &__btn-like {
+      width: 3.6rem;
+      height: 3.6rem;
+    }
+    &__btn-download, &__btn-like {
+      margin-right: 2rem;
+    }
+    &__btn-like {
+      display: block;
+    }
+  }
+}
+
+.sound-info {
+
   &__name {
     font-weight: 500;
     font-size: 1.4rem;
@@ -40,27 +72,33 @@
     color: $cLightGreyBlue;
   }
 
-  &__btn-like {
+  &__genres-list {
     display: none;
   }
 
   @include minMediaTablet {
-    padding: .7rem 2.1rem 0;
-    &__btn-play {
-      margin-right: 2.9rem;
+    display: flex;
+    align-items: center;
+    &__main {
+      flex-basis: 18rem;
+      padding-right: 1.6rem;
+      flex-shrink: 0;
+    }
+    &__genres-list {
+      display: block;
+      flex-grow: 0;
+      flex-basis: 100%;
+      padding-right: 1.6rem;
     }
     &__name {
       margin-bottom: 0.4rem;
     }
-    &__btn-more, &__btn-download, &__btn-like {
-      width: 3.6rem;
-      height: 3.6rem;
-    }
-    &__btn-download, &__btn-like {
-      margin-right: 2rem;
-    }
-    &__btn-like {
-      display: block;
+    &__genre {
+      font-family: $fInter;
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 138%;
+      color: $cLightGreyBlue;
     }
   }
 }

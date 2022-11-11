@@ -11,8 +11,8 @@ block content
                 .sounds-block__filter
                     include modules/soundsFilter/soundsFilter
             ul.sounds-block__list
-              each item in sounds
+                each item in sounds
                   li.sounds-block__item
-                      +soundItem(item)
+                      +soundItem(item.src, item.genres)
             .sounds-block__link
                 +link('See all sound effects')
