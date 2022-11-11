@@ -1,5 +1,5 @@
 include ../../../../../../components/useSvg/useSvg
-mixin soundItem(src,genres)
+mixin soundItem(src,genres,description)
     .sound-item.j-audio
         audio.j-audio-track(src=src)
         .sound-item__btn-play
@@ -8,6 +8,7 @@ mixin soundItem(src,genres)
             .sound-info__main
                 .sound-info__name Sound name
                 .sound-info__time.j-audio-time 0:00
+            p.sound-info__description=description
             .sound-info__genres-list
                 each genre in genres
                     span.sound-info__genre=genre

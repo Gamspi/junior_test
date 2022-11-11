@@ -41,15 +41,34 @@
 
   @include minMediaTablet {
     &__container {
-      padding: 0 6rem;
+      padding: 0 10rem;
     }
     &__title {
       font-size: 2.4rem;
       line-height: 160%;
       margin-bottom: 1.5rem;
     }
-    &__list{
+    &__list {
       margin-bottom: 2.5rem;
+    }
+  }
+  @include minMediaDesktop {
+    padding: 7.8rem 0 ;
+    &__container {
+      padding: 0 10rem;
+    }
+    &__title {
+      font-size: 2.8rem;
+      line-height: 4.5rem;
+      margin-bottom: 1.9rem;
+    }
+    &__header {
+      margin-bottom: 2.4rem;
+    }
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
     }
   }
 }

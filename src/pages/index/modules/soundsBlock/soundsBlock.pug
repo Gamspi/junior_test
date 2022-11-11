@@ -13,6 +13,6 @@ block content
             ul.sounds-block__list
                 each item in sounds
                   li.sounds-block__item
-                      +soundItem(item.src, item.genres)
+                      +soundItem(item.src, item.genres, item.description)
             .sounds-block__link
                 +link('See all sound effects')
