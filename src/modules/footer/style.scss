@@ -3,33 +3,57 @@
 .footer {
   background: $bDarkBlue;
   padding: 5rem 0;
-  &__container{
+
+  &__container {
     padding: 0 4.5rem 0 1.6rem;
   }
-  &__logo{
+
+  &__logo {
     width: 14.2rem;
     height: 2.1rem;
     margin-bottom: 2.5rem;
   }
-  &__description, &__copy{
+
+  &__description, &__copy {
     font-weight: 400;
     font-size: 1.4rem;
     line-height: 172%;
     color: $cGrey;
   }
-  &__description{
+
+  &__description {
     margin-bottom: 1.6rem;
   }
-  &__info{
+
+  &__info {
     margin-bottom: 3.4rem;
   }
-  &__list{
+
+  &__list {
     display: flex;
     flex-wrap: wrap;
     row-gap: 2.7rem;
     column-gap: 3.7rem;
   }
-  &__item{
+
+  &__item {
     flex: 1 1 auto;
+  }
+
+  @include minMediaTablet {
+    padding: 4rem 0;
+    &__container {
+      padding: 0 6rem 0 6rem;
+    }
+    &__info {
+      max-width: 26.5rem;
+      margin-bottom: 4.1rem;
+    }
+    &__description {
+      margin-bottom: 1.9rem;
+    }
+    &__list {
+      column-gap: 14.7rem;
+    }
   }
 }
