@@ -1,3 +1,4 @@
+include ../../components/button/button
 mixin header (nav)
     include modules/menu/menu
     include components/logo/logo
@@ -8,6 +9,6 @@ mixin header (nav)
             .header__panel.j-mobile-menu
                 nav.header__nav
                     +menu(nav)
-                button.header__login-btn(type='button') Login
+                +button('Login', 'header__login-btn', 'button')
             .header__burger
                 include components/burger/burder
