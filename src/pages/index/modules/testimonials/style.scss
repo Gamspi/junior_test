@@ -70,4 +70,13 @@
       flex: 0 0 30.5rem;
     }
   }
+  @include minMediaDesktop {
+    padding-bottom: 13.4rem;
+    &__container {
+      padding: 0 13.4rem;
+    }
+    &__list {
+      margin-bottom: 2.7rem;
+    }
+  }
 }

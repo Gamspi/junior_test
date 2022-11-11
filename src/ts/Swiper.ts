@@ -39,7 +39,6 @@ class CardSwiper {
         320: {
           spaceBetween: 20
         },
-
         768: {
           spaceBetween: 30
         }
