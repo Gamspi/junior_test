@@ -40,7 +40,6 @@
 
   &__wrapper {
     display: flex;
-
   }
 
   &__item {
@@ -52,4 +51,23 @@
     justify-content: center;
   }
 
+  @include minMediaTablet {
+    padding: 6rem 0 8.9rem;
+    &__title {
+      font-size: 2.4rem;
+      line-height: 160%;
+    }
+    &__header {
+      width: 53rem;
+      margin-bottom: 5rem;
+    }
+
+    &__container {
+      padding: 0 6.35rem;
+    }
+
+    &__item {
+      flex: 0 0 30.5rem;
+    }
+  }
 }

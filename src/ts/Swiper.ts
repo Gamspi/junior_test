@@ -35,6 +35,15 @@ class CardSwiper {
         el: '#' + this.paginationId
       },
       modules: [Navigation, Pagination],
+      breakpoints: {
+        320: {
+          spaceBetween: 20
+        },
+
+        768: {
+          spaceBetween: 30
+        }
+      },
       navigation
     })
     swiper.enable()
