@@ -1,13 +1,11 @@
 .menu {
-  display: flex;
-  column-gap: 3.6rem;
   color: $primaryColor;
 
   &__item {
     color: transparentize($cWhite, 0.4);
     transition: color .15s linear;
-
-    &._active, &:hover {
+    margin-bottom: 1.6rem;
+    &._active {
       color: $cWhite;
     }
   }
@@ -17,5 +15,16 @@
     font-weight: 500;
     font-size: 1.4rem;
     line-height: 2.4rem;
+  }
+
+  @include minMediaDesktop {
+    display: flex;
+    column-gap: 3.6rem;
+    &__item {
+      margin-bottom: 0;
+      &:hover {
+        color: $cWhite;
+      }
+    }
   }
 }

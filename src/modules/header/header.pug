@@ -2,10 +2,10 @@ mixin header (nav)
     include modules/menu/menu
     include components/logo/logo
     header.header
-        .header__container
+        .header__container.j-mobile-container
             a.header__logo(href="/")
                 +logo()
-            .header__panel
+            .header__panel.j-mobile-menu
                 nav.header__nav
                     +menu(nav)
                 button.header__login-btn(type='button') Login
