@@ -3,7 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  height: 28rem;
+  min-height: 28rem;
+  height: 100%;
   border: .1rem solid $bLightBlue;
   border-radius: 1.2rem;
 
@@ -55,7 +56,7 @@
 
   @include minMediaTablet {
     padding: 3.4rem 2.9rem 4.2rem;
-    height: 31rem;
+    min-height: 31rem;
     &__title {
       font-size: 2.4rem;
       line-height: 160%;
