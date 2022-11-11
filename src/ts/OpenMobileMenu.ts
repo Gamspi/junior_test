@@ -16,8 +16,10 @@ export class OpenMobileMenu {
           this.menu.classList.toggle('_open')
           if (this.menu.classList.contains('_open')) {
             BodyBlock.block()
+            this.burger?.classList.add('_active')
           } else {
             BodyBlock.unBlock()
+            this.burger?.classList.remove('_active')
           }
         }
       }
