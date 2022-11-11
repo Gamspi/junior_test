@@ -29,7 +29,7 @@ html {
     font-size: calc(100vmin / $tabletBreakpoint * 10);
   }
   @include minMediaDesktop {
-    font-size: calc(100vw / $desktopBreakpoint * 10);
+    font-size: calc(100vw / $wideDesktopBreakpoint * 10);
   }
   @include minMediaMaxDesktop {
     font-size: calc(100vw / $wideDesktopBreakpoint * 10);
