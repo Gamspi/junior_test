@@ -20,17 +20,38 @@
     padding-right: 2.8rem;
   }
 
-  &__nav {
-    display: none;
-  }
-
   &__logo {
     line-height: 0;
   }
-  @include minMediaTablet{
-    &__container{
+  @include minMediaTablet {
+    &__container {
       padding-left: 6.019rem;
       padding-right: 6.9rem;
+    }
+  }
+  @include minMediaDesktop {
+    height: $headerDesktopHeight;
+    &__container {
+      padding: 0 10rem;
+    }
+    &__burger {
+      display: none;
+    }
+    &__panel {
+      display: flex;
+      align-items: center;
+      column-gap: 5.3rem;
+    }
+    &__login-btn {
+      display: block;
+      padding: 1rem 2rem;
+      background: $bBlue;
+      color: $cWhite;
+      font-family: $fPoppins;
+      font-weight: 600;
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+      border-radius: 8px;
     }
   }
 }

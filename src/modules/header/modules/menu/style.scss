@@ -4,8 +4,18 @@
   color: $primaryColor;
 
   &__item {
+    color: transparentize($cWhite, 0.4);
+    transition: color .15s linear;
+
+    &._active, &:hover {
+      color: $cWhite;
+    }
   }
 
   &__link {
+    font-family: $fPoppins;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
   }
 }

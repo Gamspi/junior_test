@@ -5,7 +5,9 @@ mixin header (nav)
         .header__container
             a.header__logo(href="/")
                 +logo()
-            nav.header__nav
-                +menu(nav)
+            .header__panel
+                nav.header__nav
+                    +menu(nav)
+                button.header__login-btn(type='button') Login
             .header__burger
                 include components/burger/burder
