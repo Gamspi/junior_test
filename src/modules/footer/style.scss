@@ -56,4 +56,35 @@
       column-gap: 14.7rem;
     }
   }
+  @include minMediaDesktop {
+    padding: 5.175rem 0;
+    &__container {
+      display: flex;
+      column-gap: 14.7rem;
+      padding: 0 10rem 0 10rem;
+    }
+    &__description {
+      font-size: 1.6rem;
+      line-height: 180%;
+      margin-bottom: 2.9rem;
+    }
+    &__logo {
+      width: 17rem;
+      height: 2.55rem;
+    }
+    &__info {
+      max-width: 30.4rem;
+      margin-bottom: 0;
+    }
+    &__nav {
+      flex-grow: 1;
+    }
+    &__list {
+      justify-content: space-between;
+      column-gap: 10rem;
+    }
+    &__item {
+      flex-grow: 0;
+    }
+  }
 }

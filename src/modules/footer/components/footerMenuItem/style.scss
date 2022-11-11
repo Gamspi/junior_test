@@ -1,21 +1,34 @@
-.footer-menu-item{
-  &__title{
+.footer-menu-item {
+  &__title {
     font-weight: 600;
     font-size: 1.6rem;
     line-height: 138%;
     color: $primaryColor;
     margin-bottom: 1.2rem;
   }
-  &__list{
 
-  }
-  &__item-link{
+  &__item-link {
     margin-bottom: .8rem;
   }
-  &__link{
+
+  &__link {
     font-weight: 400;
     font-size: 1.4rem;
     line-height: 172%;
     color: $cGrey;
+  }
+
+  @include minMediaDesktop {
+    &__title {
+      font-size: 1.8rem;
+      line-height: 172%;
+    }
+    &__link {
+      font-size: 1.6rem;
+      line-height: 180%;
+    }
+    &__item-link {
+      margin-bottom: 1.1rem;
+    }
   }
 }
