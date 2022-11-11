@@ -1,7 +1,7 @@
+include ../../../../../../components/useSvg/useSvg
 mixin aboutItem(id, title, description)
     .about-item
         .about-item__icon
-            svg
-                use(xlink:href='#'+id)
+            +useSvg(id)
         h4.about-item__title=title
-        .about-item__description=description
+        p.about-item__description=description

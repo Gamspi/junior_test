@@ -1,6 +1,7 @@
 .about-item {
   width: 24.6rem;
   margin: 0 auto;
+
   &__icon {
     width: 5.6rem;
     height: 5.6rem;
@@ -20,5 +21,12 @@
     font-size: 1.4rem;
     line-height: 172%;
     color: $cLightGreyBlue;
+  }
+
+  @include minMediaTablet {
+    &__title {
+      font-size: 1.8rem;
+      line-height: 172%;
+    }
   }
 }
