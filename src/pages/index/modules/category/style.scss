@@ -21,5 +21,20 @@
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 1.8rem;
+    justify-content: space-between;
+  }
+
+  @include minMediaTablet {
+    padding-top: 3.9rem;
+    &__container {
+      padding: 0 6rem;
+    }
+    &__title {
+      font-size: 2.4rem;
+      line-height: 160%;
+    }
+    &__list{
+      row-gap:  1.2rem;
+    }
   }
 }
