@@ -3,11 +3,16 @@
   border: .1rem solid $bPureWhite;
   border-radius: .8rem;
   padding: 1.917rem 1.1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
 
   &__quotes-ico {
     width: 4rem;
     height: 4rem;
     margin: 0 auto 0.9rem;
+
   }
 
   &__quote {
@@ -17,6 +22,9 @@
     color: $cLightGreyBlue;
     margin-bottom: 2.51rem;
     display: inline-block;
+    flex-grow: 1;
+    max-height: 24rem;
+    overflow: hidden;
   }
 
   &__author {
@@ -25,6 +33,7 @@
     line-height: 172%;
     color: $secondaryColor;
     margin-bottom: .1rem;
+
   }
 
   &__job {
