@@ -7,6 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   &__text {
     font-weight: 600;
     font-size: 1.6rem;
@@ -25,12 +26,17 @@
     height: 100%;
     width: 100%;
   }
-  @include minMediaTablet{
+
+  @include minMediaTablet {
     width: 15rem;
     height: 9rem;
     &__text {
       font-size: 18px;
       padding-top: 0.9rem;
     }
+  }
+  @include minMediaDesktop {
+    width: 15.7rem;
+    height: 11.7rem;
   }
 }

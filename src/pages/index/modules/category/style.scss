@@ -33,8 +33,23 @@
       font-size: 2.4rem;
       line-height: 160%;
     }
-    &__list{
-      row-gap:  1.2rem;
+    &__list {
+      row-gap: 1.2rem;
+    }
+  }
+  @include minMediaDesktop {
+    padding-top: 4.5rem;
+    &__container {
+      padding: 0 10.1rem;
+    }
+    &__title {
+      font-size: 2.8rem;
+      line-height: 4.5rem;
+      margin-bottom: 2.2rem;
+    }
+    &__list {
+      row-gap: 1.5rem;
+      margin-bottom: 2.2rem;
     }
   }
 }
