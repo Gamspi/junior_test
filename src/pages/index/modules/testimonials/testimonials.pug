@@ -2,11 +2,11 @@ extends constants
 include components/testimonialsItem/testimonialsItem
 include ../../../../components/pagination/pagination
 block content
-    .testimonials
+    section.testimonials
         .testimonials__container
             .testimonials__header
-                .testimonials__sup-title TESTIMONIALS
-                .testimonials__title Hear good experiences from our customers
+                h3.testimonials__sup-title TESTIMONIALS
+                h2.testimonials__title Hear good experiences from our customers
             .testimonials__list.j-swiper
                 ul.testimonials__wrapper.swiper-wrapper
                     each item in testimonialsCards

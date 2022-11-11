@@ -2,9 +2,9 @@ extends constants
 include components/categoryCard/categoryCard
 include ../../components/link/link
 block content
-    .category
+    section.category
         .category__container
-            .category__title Browse by category
+            h2.category__title Browse by category
             ul.category__list
               each item in categoryCard
                   li.category__item
