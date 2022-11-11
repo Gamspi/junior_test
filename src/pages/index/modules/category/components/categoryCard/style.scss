@@ -38,5 +38,8 @@
   @include minMediaDesktop {
     width: 15.7rem;
     height: 11.7rem;
+    &__text {
+      padding-top: 0;
+    }
   }
 }
