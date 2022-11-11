@@ -72,13 +72,24 @@
     &__description {
       font-size: 1.8rem;
       line-height: 172%;
-      white-space: nowrap;
       text-align: center;
     }
     &__container {
       $padding: 8.4rem;
       padding-left: $padding;
       padding-right: $padding;
+    }
+    &__search {
+      max-width: 60rem;
+      margin: 0 auto;
+    }
+  }
+  @include minMediaDesktop {
+    padding-top: 18rem;
+    padding-bottom: 14.7rem;
+    &__description {
+      font-size: 2rem;
+      line-height: 170%;
     }
   }
 }
