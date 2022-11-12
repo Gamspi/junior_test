@@ -35,4 +35,9 @@
     transition: opacity .3s linear;
     opacity: 0;
   }
+  @include minMediaTablet{
+    &__input {
+      padding: 1.4rem 2rem;
+    }
+  }
 }

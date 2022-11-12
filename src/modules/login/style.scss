@@ -82,6 +82,30 @@
     line-height: 180%;
     color: $cGrey;
   }
+
+  @include minMediaTablet {
+    display: flex;
+    background: transparentize($secondaryColor, .5);
+    overflow: auto;
+    padding: 4rem;
+    &__close-btn {
+      right: 2.4rem;
+      top: 2.4rem;
+    }
+    &__container {
+      padding: 4rem;
+      width: 48rem;
+      height: auto;
+      margin: auto;
+      border-radius: 2.4rem;
+    }
+
+    &__btn {
+      padding-top: 1.4rem;
+      padding-bottom: 1.4rem;
+      margin-bottom: 2.4rem;
+    }
+  }
 }
 
 .login-social {
