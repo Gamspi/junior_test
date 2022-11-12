@@ -1,0 +1,7 @@
+mixin textInput (id, label, type)
+    .text-input
+        .text-input__body
+            label.text-input__label(for=id)=label
+            input.text-input__input(id=id placeholder=label type=type)
+        .text-input__footer
+            span.text-input__error

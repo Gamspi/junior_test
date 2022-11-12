@@ -1,11 +1,25 @@
 .login
     form.login__container
+        button.login__close-btn
+            +useSvg('ico-login-close')
         h3.login__title Login
-        .login__social
-        p.login__explanation or use your email
+        .login__social.login-social
+            a.login-social__link(href='#')
+                +useSvg('ico-google')
+            a.login-social__link(href='#')
+                +useSvg('ico-facebooke')
+            a.login-social__link(href='#')
+                +useSvg('ico-twitter')
+        .login__explanation
+            span or use your email
         .login__email
+            +textInput('email', 'Email', 'email')
         .login__password
+            +textInput('password', 'Password', 'password')
         .login__remember
-        .login__btn
+            +checkboxInput('isRemember', 'Remember Me')
+        +button('Login', 'login__btn', 'submit')
         .login__sing-up
+            a(href='#') or Sing Up
         .login__forgot
+            a(href='#') Forgot password?

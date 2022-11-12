@@ -1,0 +1,38 @@
+.text-input {
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 180%;
+    color: $cLightGreyBlue;
+    cursor: pointer;
+    margin-bottom: 0.6rem;
+    display: inline-block;
+  }
+
+  &__input {
+    color: $cLightGreyBlue;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 172%;
+    padding: 1rem 2rem;
+    background: $bPrimary;
+    border-radius: .8rem;
+    width: 100%;
+
+    &::placeholder {
+      color: $cGrey;
+    }
+  }
+
+  &__footer {
+
+  }
+
+  &__error {
+    transition: opacity .3s linear;
+    opacity: 0;
+  }
+}
