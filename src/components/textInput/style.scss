@@ -26,15 +26,26 @@
       color: $cGrey;
     }
   }
-
-  &__footer {
-
-  }
-
   &__error {
     transition: opacity .3s linear;
     opacity: 0;
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 180%;
+    color: $cError ;
   }
+  &._error &__error{
+    margin-top: .8rem;
+      opacity: 1;
+  }
+  &._error &__input{
+      border: .1rem solid $cError;
+    background-color: transparentize($cError, .9);
+    &::placeholder {
+      color: $cError;
+    }
+    }
+
   @include minMediaTablet{
     &__input {
       padding: 1.4rem 2rem;

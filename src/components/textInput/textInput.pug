@@ -1,7 +1,7 @@
-mixin textInput (id, label, type)
+mixin textInput (id, label, type, isRequired)
     .text-input
         .text-input__body
             label.text-input__label(for=id)=label
-            input.text-input__input(id=id placeholder=label type=type)
+            input.text-input__input(id=id placeholder=label type=type required=isRequired)
         .text-input__footer
-            span.text-input__error
+            span.text-input__error.j-input-error

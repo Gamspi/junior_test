@@ -4,6 +4,7 @@ import { ButtonClick } from '../../ts/ButtonClick'
 import CardSwiper from '../../ts/Swiper'
 import { OpenMobileMenu } from '../../ts/OpenMobileMenu'
 import { LoginOpen } from '../../ts/LoginOpen'
+import { ValidationForm } from '../../ts/ValidationForm'
 
 class Index {
   constructor () {
@@ -35,6 +36,11 @@ class Index {
       .forEach(block => {
         const audioController = new LoginOpen(block as HTMLDivElement)
         audioController.init()
+      })
+    document.querySelectorAll('.j-login-form')
+      .forEach(block => {
+        const validationForm = new ValidationForm(block as HTMLFormElement)
+        validationForm.init()
       })
   }
 }

@@ -1,5 +1,5 @@
 .login.j-login-form
-    form.login__container
+    form.login__container(novalidate)
         button.login__close-btn.j-login-form-btn-close(type='button')
             +useSvg('ico-login-close')
         h3.login__title Login
@@ -13,9 +13,9 @@
         .login__explanation
             span or use your email
         .login__email
-            +textInput('email', 'Email', 'email')
+            +textInput('email', 'Email', 'email', true)
         .login__password
-            +textInput('password', 'Password', 'password')
+            +textInput('password', 'Password', 'password', true)
         .login__remember
             +checkboxInput('isRemember', 'Remember Me')
         +button('Login', 'login__btn', 'submit')
