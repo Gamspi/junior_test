@@ -21,32 +21,37 @@
     background: $bPrimary;
     border-radius: .8rem;
     width: 100%;
+    transition: border .15s linear, background-color .15s linear;
 
     &::placeholder {
       color: $cGrey;
     }
   }
+
   &__error {
     transition: opacity .3s linear;
     opacity: 0;
     font-weight: 500;
     font-size: 1.1rem;
     line-height: 180%;
-    color: $cError ;
+    color: $cError;
   }
-  &._error &__error{
+
+  &._error &__error {
     margin-top: .8rem;
-      opacity: 1;
+    opacity: 1;
   }
-  &._error &__input{
-      border: .1rem solid $cError;
+
+  &._error &__input {
+    border: .1rem solid $cError;
     background-color: transparentize($cError, .9);
+
     &::placeholder {
       color: $cError;
     }
-    }
+  }
 
-  @include minMediaTablet{
+  @include minMediaTablet {
     &__input {
       padding: 1.4rem 2rem;
     }
