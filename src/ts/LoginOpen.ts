@@ -12,6 +12,7 @@ export class LoginOpen {
   }
 
   init () {
+    this.handelCloseForm = this.handelCloseForm.bind(this)
     this.openButtons.forEach(btn => {
       btn.onclick = () => {
         this.container.classList.add('_open')
@@ -19,10 +20,18 @@ export class LoginOpen {
       }
     })
     this.closeButtons.forEach(btn => {
-      btn.onclick = () => {
-        this.container.classList.remove('_open')
-        BodyBlock.unBlock()
-      }
+      btn.onclick = this.handelCloseForm
     })
+    this.container.onclick = e => {
+      const target = e.target as HTMLElement
+      if (!target.closest('.j-login-body')) {
+        this.handelCloseForm()
+      }
+    }
+  }
+
+  handelCloseForm () {
+    this.container.classList.remove('_open')
+    BodyBlock.unBlock()
   }
 }
