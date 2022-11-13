@@ -7,6 +7,7 @@ class CalcSelect {
   private body: HTMLElement | null
   private btn: HTMLButtonElement | null
 
+  private isOpen = false
   private bodyHeight: number = 0
   private screenWidth: number = 0
   private rem: number = 0
@@ -23,16 +24,21 @@ class CalcSelect {
     this.ListenerBody = this.ListenerBody.bind(this)
     this.checkRem = this.checkRem.bind(this)
     this.convertToRem = this.convertToRem.bind(this)
+
     if (this.btn) {
       this.btn.onclick = () => {
         this.checkRem()
-        if (this.body) this.body.style.maxHeight = this.convertToRem(this.bodyHeight) + 'rem'
-        this.container.classList.toggle('_open')
-        if (this.container.classList.contains('_open')) {
+        console.log(this.isOpen)
+        if (this.isOpen) {
           if (this.body) {
             this.body.style.maxHeight = ''
           }
+          document.body.removeEventListener('click', this.ListenerBody)
+          this.isOpen = false
+        } else {
+          if (this.body) this.body.style.maxHeight = this.convertToRem(this.bodyHeight) + 'rem'
           document.body.addEventListener('click', this.ListenerBody)
+          this.isOpen = true
         }
       }
     }
@@ -52,10 +58,12 @@ class CalcSelect {
 
   ListenerBody (e: Event) {
     const target = e.target as HTMLElement
-    if (target !== this.btn) {
+    console.log('body')
+    if (!target.closest('.j-select-btn')) {
       if (this.body) this.body.style.maxHeight = ''
       this.container.classList.remove('_open')
       document.body.removeEventListener('click', this.ListenerBody)
+      this.isOpen = false
     }
   }
 
@@ -77,7 +85,7 @@ class CalcSelect {
   }
 
   convertToRem (num: number) {
-    return Math.ceil(num / this.rem) / 10
+    return Math.round(num / this.rem) / 10
   }
 }
 

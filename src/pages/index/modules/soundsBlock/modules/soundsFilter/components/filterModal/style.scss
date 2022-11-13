@@ -5,17 +5,19 @@
   background: $bPrimary;
   z-index: -1;
   opacity: 0;
-  transition: opacity .3s linear, width .3s linear .3s, height .6s linear .6s;
+  transition: opacity .3s linear, width .3s linear .3s, height .3s linear .6s;
   position: relative;
   overflow: hidden;
-  visibility: hidden;
-
+  border-radius: .4rem;
   &._open {
-    visibility: visible;
     z-index: 1;
     opacity: 1;
     width: 28.8rem;
     height: 37.7rem;
+    .filter-modal__container{
+      opacity: 1;
+      transition: opacity .3s linear .9s;
+    }
   }
 
   &__close-btn {
@@ -23,9 +25,40 @@
     height: 4.8rem;
     margin-left: auto;
     display: block;
+    position: absolute;
+    right: 0.8rem;
+    top: -0.4rem;
   }
 
-  &__close-svg {
+  &__container{
+    opacity: 0;
+    padding: 1rem 2rem 2rem;
+  }
+  &__title{
+    font-weight: 600; //TODO в макете  500
+    font-size: 1.6rem;
+    line-height: 138%;
+    color: $cLightGreyBlue;
+    margin-bottom: 0.7rem;
+  }
+  &__time-slider{
+    margin-bottom: 4.2rem;
+  }
+  &__select-categories{
+    margin-bottom: 2.7rem;
+  }
+  &__apply{
+    margin-left: auto;
+    display: block;
+  }
+}
 
+.filter-modal-checkboxes{
+  margin-left: 0.3rem;
+  margin-bottom: 4.3rem;
+  &__item {
+    &:not(:last-child){
+      margin-bottom: 1.4rem;
+    }
   }
 }
