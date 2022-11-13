@@ -1,0 +1,31 @@
+.filter-modal {
+  $size: 3.6rem;
+  width: $size;
+  height: $size;
+  background: $bPrimary;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity .3s linear, width .3s linear .3s, height .6s linear .6s;
+  position: relative;
+  overflow: hidden;
+  visibility: hidden;
+
+  &._open {
+    visibility: visible;
+    z-index: 1;
+    opacity: 1;
+    width: 28.8rem;
+    height: 37.7rem;
+  }
+
+  &__close-btn {
+    width: 4.8rem;
+    height: 4.8rem;
+    margin-left: auto;
+    display: block;
+  }
+
+  &__close-svg {
+
+  }
+}

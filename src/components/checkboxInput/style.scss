@@ -14,7 +14,9 @@
     border-radius: .2rem;
     margin-right: 1.1rem;
     position: relative;
-
+    &--white{
+      background: $bgWhite;
+    }
     &:after {
       opacity: 0;
       content: '';

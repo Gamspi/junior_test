@@ -5,6 +5,9 @@ import CardSwiper from '../../ts/Swiper'
 import { OpenMobileMenu } from '../../ts/OpenMobileMenu'
 import { LoginOpen } from '../../ts/LoginOpen'
 import { ValidationForm } from '../../ts/ValidationForm'
+import { FilterController } from '../../ts/FilterController'
+import SliderInput from '../../ts/SliderInput'
+import CustomSelect from '../../ts/CustomSelect'
 
 class Index {
   constructor () {
@@ -41,6 +44,21 @@ class Index {
       .forEach(block => {
         const validationForm = new ValidationForm(block as HTMLFormElement)
         validationForm.init()
+      })
+    document.querySelectorAll('.j-filter')
+      .forEach(block => {
+        const filterController = new FilterController(block as HTMLDivElement)
+        filterController.init()
+      })
+    document.querySelectorAll('.j-slider-input')
+      .forEach(block => {
+        const sliderInput = new SliderInput(block as HTMLDivElement)
+        sliderInput.init()
+      })
+    document.querySelectorAll('.j-custom-select')
+      .forEach(block => {
+        const customSelect = new CustomSelect(block as HTMLDivElement)
+        customSelect.init()
       })
   }
 }

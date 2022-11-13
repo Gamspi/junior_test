@@ -36,3 +36,16 @@
       font-size: 10px;
     }
 }
+
+@mixin dote {
+  & {
+    appearance: none;
+    width: .8rem;
+    height: .8rem;
+    background: $bBlue;
+    border-radius: 50%;
+    pointer-events: auto;
+    cursor: pointer;
+    z-index: 1;
+  }
+}

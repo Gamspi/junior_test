@@ -1,0 +1,9 @@
+mixin castomSelect(options, jClass)
+    .custom-select.j-custom-select
+        .custom-select__header
+            input.custom-select__current.j-select-input(type='text' disabled value=options[0] class=jClass)
+            batton.custom-select__btn.j-select-btn
+                +useSvg('ico-arrow-dawn', 'custom-select__icon')
+        .custom-select__body.j-select-body
+          each item in options
+              .custom-select__item.j-select-option(data-value=item)=item

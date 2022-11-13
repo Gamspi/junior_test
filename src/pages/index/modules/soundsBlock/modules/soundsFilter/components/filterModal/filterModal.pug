@@ -1,0 +1,12 @@
+extends constants
+block content
+    .filter-modal.j-filter-modal
+        .filter-modal__contaner
+            h4.filter-modal__title Filter
+            +sliderInput('label', '0.00', '2.00')
+            +checkboxInput('onlyFree', 'Only free sounds', true)
+            +checkboxInput('myFavorite', 'Only my favorite sounds', true)
+            +castomSelect(optionsFilter)
+            button.filter-modal__close-btn.j-filter-close
+                +useSvg('ico-login-close', '.filter-modal__close-svg')
+            +button('Аpply','filter-modal__close','button')

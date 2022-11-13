@@ -1,4 +1,4 @@
-mixin checkboxInput(id, text)
+mixin checkboxInput(id, text, isWhite)
     .checkbox-input
-        input.checkbox-input__checkbox(type='checkbox' id=id)
+        input.checkbox-input__checkbox(type='checkbox' id=id class=isWhite && 'checkbox-input__checkbox--white')
         label.checkbox-input__label(for=id)=text

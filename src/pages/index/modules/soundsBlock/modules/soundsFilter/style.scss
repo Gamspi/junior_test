@@ -1,5 +1,14 @@
 @import "components/index";
 
 .sounds-filter {
-
+  position: relative;
+  &__modal {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  &__button{
+    z-index: 1;
+    position: relative;
+  }
 }
