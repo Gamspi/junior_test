@@ -27,11 +27,11 @@ export class AudioController {
       }
     }
     if (this.track) {
-      this.track.ontimeupdate = _ => {
+      this.track.ontimeupdate = () => {
         this.currentTime = TimeConverter.convert(Math.floor(this.track!.currentTime))
         if (this.$time) this.$time.innerText = this.currentTime
       }
-      this.track.onended = (e) => {
+      this.track.onended = () => {
         this.playBtn?.classList.remove('_play')
       }
     }
