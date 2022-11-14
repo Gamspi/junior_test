@@ -29,20 +29,12 @@ class CardSwiper {
 
     const swiper = new Swiper(this.block, {
       slidesPerView: 'auto',
-      spaceBetween: 20,
+      spaceBetween: 0,
       centeredSlides: false,
       pagination: {
         el: '#' + this.paginationId
       },
       modules: [Navigation, Pagination],
-      breakpoints: {
-        320: {
-          spaceBetween: 20
-        },
-        768: {
-          spaceBetween: 30
-        }
-      },
       navigation
     })
     swiper.enable()

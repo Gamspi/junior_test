@@ -44,6 +44,9 @@
 
   &__item {
     flex: 0 0 28.7rem;
+    &:not(:last-child){
+      margin-right: 2rem;
+    }
   }
 
   &__pagination {
@@ -68,6 +71,9 @@
 
     &__item {
       flex: 0 0 30.5rem;
+      &:not(:last-child){
+        margin-right: 3rem;
+      }
     }
   }
   @include minMediaDesktop {
