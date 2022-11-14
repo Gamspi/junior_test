@@ -5,7 +5,7 @@
   background: $bPrimary;
   z-index: 2;
   opacity: 0;
-  transition: max-height .3s linear, width .3s linear .6s, opacity .3s linear .9s;
+  transition: max-height .3s linear, width .3s linear .3s, opacity .3s linear .3s;
   position: relative;
   overflow: hidden;
   border-radius: .4rem;
@@ -14,10 +14,10 @@
     opacity: 1;
     width: 28.8rem;
     max-height: 50rem;
-    transition: opacity .3s linear, width .3s linear .6s, max-height .3s linear .9s;
+    transition: opacity .3s linear, width .3s linear , max-height .3s linear .3s;
     .filter-modal__container{
       opacity: 1;
-      transition: opacity .3s linear 1.2s;
+      transition: opacity .3s linear .6s;
     }
   }
 
