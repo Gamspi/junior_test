@@ -9,6 +9,6 @@ block content
             ul.tariff__cards
                 each item in tariffCard
                     li.tariff__item
-                        +tariffCard(item.title, item.description, item.cost)
+                        +tariffCard(item.title, item.description, item.cost, item.isWhite)
             .tariff__footer
                 span.tariff__info Join premium with 434,849 creators.
