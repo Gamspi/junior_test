@@ -3,7 +3,18 @@
 .sounds-tabs {
   display: flex;
   column-gap: 1.2rem;
+  max-width: 100%;
+  overflow: auto;
+  padding-bottom: 1rem;
+  &__item {
+    flex-shrink: 0;
+  }
+
   @include minMediaTablet {
     column-gap: 2.8rem;
+  }
+  @include minMediaDesktop {
+    flex-wrap: wrap;
+    row-gap: 1.6rem;
   }
 }
