@@ -42,6 +42,7 @@
   &._active {
     &:before {
       transform: translateY(-1.1rem) rotate(135deg);
+      bottom: -.3rem;
     }
 
     &:after {
@@ -53,6 +54,11 @@
     }
   }
   @include minMediaTablet{
+    &._active {
+      &:before {
+        bottom: .2rem;
+      }
+    }
     height: 2rem;
   }
 }
