@@ -16,6 +16,11 @@ class Index {
   }
 
   init () {
+    Xhr.Get('http://localhost:5000/api/genre', {
+      id: 'zonk'
+    }).then((data) => {
+      console.log(data)
+    })
     document.querySelectorAll('.j-audio')
       .forEach(block => {
         const audioController = new AudioController(block as HTMLDivElement)
