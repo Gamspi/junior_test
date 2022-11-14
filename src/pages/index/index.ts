@@ -16,7 +16,6 @@ class Index {
   }
 
   init () {
-    Xhr.Get('https://jsonplaceholder.typicode.com/posts').then(r => console.log(r))
     document.querySelectorAll('.j-audio')
       .forEach(block => {
         const audioController = new AudioController(block as HTMLDivElement)
