@@ -1,22 +1,23 @@
 .filter-modal {
   $size: 3.6rem;
-  width: $size;
-  height: $size;
+  width: 0;
+  max-height: $size;
   background: $bPrimary;
-  z-index: -1;
+  z-index: 2;
   opacity: 0;
-  transition: opacity .3s linear, width .3s linear .3s, height .3s linear .6s;
+  transition: max-height .3s linear, width .3s linear .6s, opacity .3s linear .9s;
   position: relative;
   overflow: hidden;
   border-radius: .4rem;
   &._open {
-    z-index: 1;
+    overflow: visible;
     opacity: 1;
     width: 28.8rem;
-    height: 37.7rem;
+    max-height: 50rem;
+    transition: opacity .3s linear, width .3s linear .6s, max-height .3s linear .9s;
     .filter-modal__container{
       opacity: 1;
-      transition: opacity .3s linear .9s;
+      transition: opacity .3s linear 1.2s;
     }
   }
 
@@ -33,6 +34,7 @@
   &__container{
     opacity: 0;
     padding: 1rem 2rem 2rem;
+    transition: opacity .3s linear .3s;
   }
   &__title{
     font-weight: 600; //TODO в макете  500
@@ -50,6 +52,9 @@
   &__apply{
     margin-left: auto;
     display: block;
+  }
+  @include minMediaTablet{
+    max-height: 4rem;
   }
 }
 
