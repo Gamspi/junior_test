@@ -4,6 +4,30 @@
   font-weight: 500;
   font-size: 1.4rem;
   line-height: 138%;
+  transition: color .15s linear;
+  &:after {
+    content: '';
+    height: .2rem;
+    background: $secondaryColor;
+    border-radius: .1rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity .15s linear;
+  }
+
+  &._active {
+    color: $secondaryColor;
+    position: relative;
+
+    &:after {
+      opacity: 1;
+    }
+
+  }
+
   @include minMediaDesktop {
     font-size: 1.6rem;
     line-height: 138%;

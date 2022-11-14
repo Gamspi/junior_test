@@ -1,7 +1,6 @@
 import './index.scss'
-import { Xhr } from '../../ts/api/Xhr/Xhr'
-import { AudioController } from '../../ts/AudioController'
 import { ButtonClick } from '../../ts/ButtonClick'
+import { ChooseGenre } from '../../ts/ChooseGenre'
 import CardSwiper from '../../ts/Swiper'
 import { OpenMobileMenu } from '../../ts/OpenMobileMenu'
 import { LoginOpen } from '../../ts/LoginOpen'
@@ -16,16 +15,6 @@ class Index {
   }
 
   init () {
-    Xhr.Get('http://localhost:5000/api/genre', {
-      id: 'zonk'
-    }).then((data) => {
-      console.log(data)
-    })
-    document.querySelectorAll('.j-audio')
-      .forEach(block => {
-        const audioController = new AudioController(block as HTMLDivElement)
-        audioController.init()
-      })
     document.querySelectorAll('.j-button-click')
       .forEach(block => {
         const audioController = new ButtonClick(block as HTMLButtonElement)
@@ -65,6 +54,11 @@ class Index {
       .forEach(block => {
         const customSelect = new CustomSelect(block as HTMLDivElement)
         customSelect.init()
+      })
+    document.querySelectorAll('.j-sounds-list')
+      .forEach(block => {
+        const chooseGenre = new ChooseGenre(block as HTMLDivElement)
+        chooseGenre.init()
       })
   }
 }

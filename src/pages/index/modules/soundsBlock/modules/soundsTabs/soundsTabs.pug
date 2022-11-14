@@ -4,4 +4,4 @@ block content
     ul.sounds-tabs
         each tab in tabs
             li.sounds-tabs__item
-                +soundTab(tab.label)
+                +soundTab(tab.label, tab.id.toLowerCase())

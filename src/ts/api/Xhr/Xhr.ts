@@ -6,14 +6,14 @@ export class Xhr {
   constructor () {
   }
 
-  static async Get (URL: string, param?: Object) {
+  static async Get<T> (URL: string, param?: Object):Promise<T> {
     this.URL = URL
     const url = !param ? this.URL : `${this.URL}?${this.getOptions(param)}`
-    return this.send('GET', url)
+    return this.send<T>('GET', url)
   }
 
-  private static send (method: string, url: string) {
-    return new Promise((resolve, reject) => {
+  private static send<T> (method: string, url: string):Promise<T> {
+    return new Promise<T>((resolve, reject) => {
       this.xhr = new XMLHttpRequest()
       this.xhr.open(method, url)
       this.xhr.responseType = 'json'
