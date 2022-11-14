@@ -4,7 +4,7 @@ module.exports = [
     name: 'Name track 1',
     description: 'Confused excited crowd slight panic and distress',
     src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-    isLike: true,
+    isLike: false,
     genres: [
       'shocking',
       'mellow',
@@ -16,7 +16,7 @@ module.exports = [
     name: 'Name track 2',
     description: 'Confused excited crowd slight panic and distress',
     src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-    isLike: true,
+    isLike: false,
     genres: [
       'shocking',
       'mellow',
@@ -53,7 +53,7 @@ module.exports = [
     name: 'Name track 5',
     description: 'Confused excited crowd slight panic and distress',
     src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
-    isLike: true,
+    isLike: false,
     genres: [
       'shocking',
       'mellow',

@@ -75,14 +75,14 @@ export class ChooseGenre {
                           <div class="sound-item__actions">
                             <div class="sound-item__btn-like">
                               <div class="like-button">
-                                <input class="like-button__input" type="checkbox" checked=${isLike}>
+                                <input class="like-button__input" type="checkbox" ${isLike ? 'checked' : ''}>
                                 <div class="like-button__icon">
                                               <svg>
                                                 <use xlink:href="#ico-like"></use>
                                               </svg>
                                 </div>
                               </div>
-                            </div><a class="sound-item__btn-download" target="_blank" href="${src}" download="audio">
+                            </div><a class="sound-item__btn-download"  href="${src}" download>
                                           <svg>
                                             <use xlink:href="#ico-download"></use>
                                           </svg></a><a class="sound-item__btn-more" href="#">
