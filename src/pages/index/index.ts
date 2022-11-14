@@ -1,4 +1,5 @@
 import './index.scss'
+import { Xhr } from '../../ts/api/Xhr/Xhr'
 import { AudioController } from '../../ts/AudioController'
 import { ButtonClick } from '../../ts/ButtonClick'
 import CardSwiper from '../../ts/Swiper'
@@ -15,6 +16,7 @@ class Index {
   }
 
   init () {
+    Xhr.Get('https://jsonplaceholder.typicode.com/posts').then(r => console.log(r))
     document.querySelectorAll('.j-audio')
       .forEach(block => {
         const audioController = new AudioController(block as HTMLDivElement)
