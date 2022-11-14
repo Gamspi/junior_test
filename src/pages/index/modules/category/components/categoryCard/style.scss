@@ -27,7 +27,7 @@
     transition: background-color .15s linear;
     &:hover{
       text-decoration: underline;
-      background-color: transparentize($bBlue, .75);
+      background-color: transparentize($bgBlue, .75);
     }
   }
 
