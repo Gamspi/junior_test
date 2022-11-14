@@ -26,6 +26,10 @@
     &__link {
       font-size: 1.6rem;
       line-height: 180%;
+      transition: color .15s linear;
+      &:hover {
+        color: $cWhite;
+      }
     }
     &__item-link {
       margin-bottom: 1.1rem;
