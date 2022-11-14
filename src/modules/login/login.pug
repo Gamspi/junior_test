@@ -1,5 +1,5 @@
 .login.j-login-form
-    form.login__container.j-login-body(novalidate)
+    form.login__container.j-login-body._error(novalidate)
         button.login__close-btn.j-login-form-btn-close(type='button')
             +useSvg('ico-login-close')
         h3.login__title Login
@@ -18,6 +18,7 @@
             +textInput('password', 'Password', 'password', true)
         .login__remember
             +checkboxInput('isRemember', 'Remember Me')
+        .login__error Account not found
         +button('Login', 'login__btn', 'submit')
         .login__sing-up
             a(href='#') or Sing Up

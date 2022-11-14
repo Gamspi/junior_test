@@ -18,9 +18,6 @@ export class ValidationForm {
           } else {
             if (input.parentElement && input.parentElement.parentElement) {
               input.parentElement.parentElement.classList.add('_error')
-              const text = input.parentElement.parentElement.querySelector('.j-input-error')
-              console.log(input.parentElement)
-              if (text) text.innerHTML = input.validationMessage
             }
             input.oninput = () => {
               if (input.validity.valid && input.parentElement && input.parentElement.parentElement) {

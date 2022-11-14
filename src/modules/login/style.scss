@@ -70,7 +70,7 @@
 
   &__remember {
     margin-left: 0.3rem;
-    margin-bottom: 5.8rem;
+    margin-bottom: 2.1rem;
   }
 
   &__forgot, &__sing-up {
@@ -91,7 +91,17 @@
     line-height: 180%;
     color: $cGrey;
   }
-
+  &__error{
+    opacity:  .5;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 180%;
+    margin-bottom: .8rem;
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: $cError;
+  }
   @include minMediaTablet {
     display: flex;
     background: transparentize($secondaryColor, .5);
