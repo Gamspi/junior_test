@@ -1,6 +1,6 @@
 import { Xhr } from './api/Xhr/Xhr'
 import { AudioController } from './AudioController'
-import { MusicTrack } from './types'
+import { MusicTrack } from './types/types'
 
 export class ChooseGenre {
   private list: HTMLElement | null;
