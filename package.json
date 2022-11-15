@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve --env development --config ./webpack/config.js",
-    "build": "webpack --env production --config ./webpack/config.js"
+    "build": "webpack --env production --config ./webpack/config.js",
+    "server": "node ./server/server.js"
   },
   "author": "",
   "license": "ISC",
