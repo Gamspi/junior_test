@@ -12,7 +12,14 @@
       right: 0;
       bottom: 0;
       border-bottom: .1rem solid $cBlue ;
+      opacity: 0;
+      transition: opacity .15s linear;
     }
+  &:hover{
+    &:after{
+      opacity: 1;
+    }
+  }
   @include minMediaDesktop{
     letter-spacing: -.01rem
   }
