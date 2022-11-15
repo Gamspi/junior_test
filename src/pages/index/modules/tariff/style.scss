@@ -63,6 +63,7 @@
     &__sub-title {
       font-size: 1.8rem;
       line-height: 189%;
+      letter-spacing: -.05rem
     }
 
     &__item {
@@ -88,6 +89,7 @@
     &__info {
       font-size: 1.8rem;
       line-height: 189%;
+      letter-spacing: -.05rem
     }
   }
   @include minMediaDesktop {

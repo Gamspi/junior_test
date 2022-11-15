@@ -37,6 +37,7 @@
     &__text {
       font-size: 1.8rem;
       padding-top: 0.9rem;
+      letter-spacing: -.05rem
     }
   }
   @include minMediaDesktop {
