@@ -6,6 +6,9 @@
       max-height: 30rem;
       overflow: auto;
     }
+    .custom-select__header {
+      border-radius: .8rem .8rem 0 0  ;
+    }
 
     .custom-select__icon {
       transform: scale(1, -1);
@@ -37,18 +40,19 @@
     align-items: center;
     position: relative;
     border: 1px solid $cGrey;
-    border-radius: 8px;
+    border-radius: .8rem;
     background: $bPrimary;
     z-index: 3;
+    transition: border-radius .1s linear;
   }
 
   &__item {
     cursor: pointer;
-    height: 4.4rem;
+    min-height: 4.4rem;
     display: flex;
     align-items: center;
     border-top: none;
-    padding: 2rem 2.6rem;
+    padding: .6rem 2.6rem;
     color: $cLightGreyBlue;
     transition: color .15s linear;
     &:hover {
@@ -63,12 +67,12 @@
     top: 0;
     overflow: hidden;
     max-height: 4.4rem;
-    transition: max-height .3s linear, padding-top .3s linear;
+    transition: max-height .2s linear, padding-top .3s linear;
     z-index: 2;
     background: $bPrimary;
     border: 1px solid $bgGray;
-    border-radius: 8px;
-    padding-top: 4.2rem
+    border-radius: .8rem;
+    padding-top: 4.2rem;
   }
 
   &__btn {
