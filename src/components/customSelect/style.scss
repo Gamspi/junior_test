@@ -3,7 +3,8 @@
 
   &._open {
     .custom-select__body {
-      max-height: 50rem;
+      max-height: 30rem;
+      overflow: auto;
     }
 
     .custom-select__icon {
@@ -48,9 +49,10 @@
     align-items: center;
     border-top: none;
     padding: 2rem 2.6rem;
-
+    color: $cLightGreyBlue;
+    transition: color .15s linear;
     &:hover {
-      background: transparentize($bgGray, .5);
+      color: $cBlue;
     }
   }
 
