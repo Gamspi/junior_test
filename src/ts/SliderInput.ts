@@ -6,9 +6,6 @@ class SliderInput {
   private readonly rangeMax: HTMLInputElement | null
   private minValue: number = 0
   private maxValue: number = 100
-  private defaultMin: number = 0
-  private defaultMax: number = 0
-  private onePercent: number = 1
 
   constructor (private container: HTMLElement) {
     this.progress = container.querySelector('.j-progress')
@@ -17,10 +14,8 @@ class SliderInput {
   }
 
   init () {
-    if (this.rangeMin && this.rangeMin.dataset.defaultvalue) this.defaultMin = TimeConverter.convertOut(this.rangeMin.dataset.defaultvalue)
-    if (this.rangeMax && this.rangeMax.dataset.defaultvalue) this.defaultMax = TimeConverter.convertOut(this.rangeMax.dataset.defaultvalue)
-    this.onePercent = this.defaultMax / this.maxValue
-
+    if (this.rangeMax) { this.maxValue = +this.rangeMax.max }
+    if (this.rangeMin) { this.minValue = +this.rangeMin.min }
     if (this.rangeMin) {
       this.handlerMinProgress(this.rangeMin)
       this.rangeMin.oninput = (e) => {
@@ -71,7 +66,7 @@ class SliderInput {
   }
 
   changeValueToTime (value: number) {
-    return TimeConverter.convert(Math.floor(this.onePercent * value))
+    return TimeConverter.convert(Math.floor(value))
   }
 
   changeValue (min?: number, max?: number) {

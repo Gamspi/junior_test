@@ -2,6 +2,6 @@ mixin sliderInput(label, min, max)
     .slider-input.j-slider-input
         .slider-input__label=label
         .slider-input__body
-            .slider-input__progress.change-color.j-progress(data-valueMin='0:15' data-valueMax='0:15')
-            input.slider-input__range.j-setting-min(type="range" min=0 max=100 value=0 data-defaultValue=min)
-            input.slider-input__range.j-setting-max(type="range" min=0 max=100 value=100 data-defaultValue=max)
+            .slider-input__progress.change-color.j-progress(data-valueMin='0:00' data-valueMax='0:00')
+            input.slider-input__range.j-setting-min(type="range" min=min max=max value=0 data-defaultValue=min)
+            input.slider-input__range.j-setting-max(type="range" min=min max=max value=100 data-defaultValue=max)

@@ -6,7 +6,7 @@ block content
                 +useSvg('ico-login-close', '.filter-modal__close-svg')
             h4.filter-modal__title Filter
             .filter-modal__time-slider
-                +sliderInput('Duration', '0.00', '2.00')
+                +sliderInput('Duration', 0, 550)
             .filter-modal__select-categories
                 +castomSelect(optionsFilter)
             .filter-modal__checkboxes.filter-modal-checkboxes
