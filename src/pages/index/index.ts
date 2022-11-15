@@ -4,7 +4,7 @@ import { ChooseGenre } from '../../ts/ChooseGenre'
 import CardSwiper from '../../ts/Swiper'
 import { OpenMobileMenu } from '../../ts/OpenMobileMenu'
 import { LoginOpen } from '../../ts/LoginOpen'
-import { ValidationForm } from '../../ts/ValidationForm'
+import { ValidationLoginForm } from '../../ts/ValidationLoginForm'
 import { FilterController } from '../../ts/FilterController'
 import SliderInput from '../../ts/SliderInput'
 import CustomSelect from '../../ts/CustomSelect'
@@ -37,7 +37,7 @@ class Index {
       })
     document.querySelectorAll('.j-login-form')
       .forEach(block => {
-        const validationForm = new ValidationForm(block as HTMLFormElement)
+        const validationForm = new ValidationLoginForm(block as HTMLFormElement)
         validationForm.init()
       })
     document.querySelectorAll('.j-filter')

@@ -13,12 +13,12 @@
         .login__explanation
             span or use your email
         .login__email
-            +textInput('email', 'Email', 'email', true)
+            +textInput('email', 'Email', 'email', true, 'j-login-email')
         .login__password
-            +textInput('password', 'Password', 'password', true)
+            +textInput('password', 'Password', 'password', true, 'j-login-password')
         .login__remember
             +checkboxInput('isRemember', 'Remember Me')
-        .login__error Account not found
+        .login__error.j-login-error Account not found
         +button('Login', 'login__btn', 'submit')
         .login__sing-up
             a(href='#') or Sing Up

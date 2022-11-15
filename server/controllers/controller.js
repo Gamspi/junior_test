@@ -1,4 +1,5 @@
 let bd = require('../bd/bd')
+const users = require('../bd/usersBD')
 
 class GenreController {
   async filter (req, res) {
@@ -25,7 +26,7 @@ class GenreController {
   }
 }
 
-class Controller {
+class LikeController {
   async handelLike (req, res) {
     const { id } = req.body
     const elem = bd.find(elem => elem.id === id)
@@ -46,7 +47,27 @@ class Controller {
   }
 }
 
+class Authorization {
+  async auth (req, res) {
+    const { email, password } = req.body
+    const user = users.find(user => user.email === email && user.password === password)
+    if (user) {
+      return res.status(200).json({
+        status: 'success',
+        data: { id: user.id },
+        message: ''
+      })
+    } else {
+      return res.status(400).json({
+        message: 'Not find',
+        status: 'error',
+        data: {}
+      })
+    }
+  }
+}
 module.exports = {
-  LikeController: new Controller(),
-  GenreController: new GenreController()
+  LikeController: new LikeController(),
+  GenreController: new GenreController(),
+  Authorization: new Authorization()
 }

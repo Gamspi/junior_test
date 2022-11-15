@@ -101,6 +101,11 @@
     white-space: nowrap;
     overflow: hidden;
     color: $cError;
+    transition: opacity .3s linear;
+    &._visible{
+      opacity: 1;
+      width: auto;
+    }
   }
   @include minMediaTablet {
     display: flex;
