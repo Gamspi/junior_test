@@ -1,5 +1,6 @@
 /* eslint-disable no-tabs */
 export type MusicTrack = {
+	id: string,
 	name: string,
 	description: string,
 	src: URL,
@@ -7,6 +8,8 @@ export type MusicTrack = {
 	genres: string[]
 }
 
-export type MyRequest = {
-
+export type MyRequest<T> = {
+	status: string,
+	message : string,
+	data: T
 }

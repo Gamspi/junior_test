@@ -1,6 +1,7 @@
 import { Xhr } from './api/Xhr/Xhr'
 import { AudioController } from './AudioController'
-import { MusicTrack } from './types/types'
+import { LikeController } from './LikeController'
+import { MusicTrack, MyRequest } from './types/types'
 
 export class ChooseGenre {
   private list: HTMLElement | null;
@@ -10,6 +11,7 @@ export class ChooseGenre {
     this.list = container.querySelector('.j-sound-list')
     this.tabs = container.querySelectorAll('.j-sound-tab')
     this.toggleActive = this.toggleActive.bind(this)
+    this.itemInit = this.itemInit.bind(this)
   }
 
   init () {
@@ -28,16 +30,12 @@ export class ChooseGenre {
   }
 
   GetGenre (id?:string) {
-    Xhr.Get<MusicTrack[]>('http://localhost:5000/api/genre', {
+    Xhr.Get<MyRequest<MusicTrack[]>>('http://localhost:5000/api/genre', {
       id
-    }).then((data) => {
+    }).then(({ data }) => {
       if (this.list) this.list.innerHTML = ''
       data.forEach(item => this.itemGeneration(item))
-      document.querySelectorAll('.j-audio')
-        .forEach(block => {
-          const audioController = new AudioController(block as HTMLDivElement)
-          audioController.init()
-        })
+      this.itemInit()
     })
   }
 
@@ -45,7 +43,7 @@ export class ChooseGenre {
     this.tabs.forEach(elem => elem === target ? elem.classList.add('_active') : elem.classList.remove('_active'))
   }
 
-  itemGeneration ({ src, name, description, genres, isLike }: MusicTrack) {
+  itemGeneration ({ src, name, description, genres, isLike, id }: MusicTrack) {
     if (this.list) {
       const element = document.createElement('li')
       element.classList.add('sounds-block__item')
@@ -69,13 +67,13 @@ export class ChooseGenre {
                             </div>
                             <p class="sound-info__description">${description}</p>
                             <div class="sound-info__genres-list">
-                            ${genres.map(genre => `<span class="sound-info__genre">${genre}</span>`)}
+                            ${genres.map(genre => `<span class="sound-info__genre">${genre}</span>`).join(', ')}
                             </div>
                           </div>
                           <div class="sound-item__actions">
                             <div class="sound-item__btn-like">
                               <div class="like-button">
-                                <input class="like-button__input" type="checkbox" ${isLike ? 'checked' : ''}>
+                                <input class="like-button__input j-like-btn" type="checkbox" ${isLike ? 'checked' : ''} data-id='${id}'>
                                 <div class="like-button__icon">
                                               <svg>
                                                 <use xlink:href="#ico-like"></use>
@@ -94,5 +92,18 @@ export class ChooseGenre {
               `
       this.list.append(element)
     }
+  }
+
+  itemInit () {
+    document.querySelectorAll('.j-audio')
+      .forEach(block => {
+        const audioController = new AudioController(block as HTMLDivElement)
+        audioController.init()
+      })
+    document.querySelectorAll('.j-like-btn')
+      .forEach(block => {
+        const likeController = new LikeController(block as HTMLInputElement)
+        likeController.init()
+      })
   }
 }

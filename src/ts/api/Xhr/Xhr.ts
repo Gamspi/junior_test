@@ -12,10 +12,16 @@ export class Xhr {
     return this.send<T>('GET', url)
   }
 
-  private static send<T> (method: string, url: string):Promise<T> {
+  static async Post<T> (URL: string, postObj: object):Promise<T> {
+    this.URL = URL
+    return this.send<T>('POST', this.URL, postObj)
+  }
+
+  private static send<T> (method: string, url: string, postObj?: object):Promise<T> {
     return new Promise<T>((resolve, reject) => {
       this.xhr = new XMLHttpRequest()
       this.xhr.open(method, url)
+      this.xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8')
       this.xhr.responseType = 'json'
       this.xhr.onload = () => {
         if (this.xhr.status < 400) {
@@ -27,7 +33,7 @@ export class Xhr {
       this.xhr.onerror = () => {
         reject(this.xhr.response)
       }
-      this.xhr.send()
+      this.xhr.send(JSON.stringify(postObj))
     })
   }
 
