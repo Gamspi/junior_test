@@ -42,6 +42,11 @@
 
   }
 
+  &--white {
+    background: $bgLightBlue;
+    border-color: transparent;
+  }
+
   @include minMediaTablet {
     padding: 3.4rem 2.9rem 4.2rem;
     min-height: 31rem;
