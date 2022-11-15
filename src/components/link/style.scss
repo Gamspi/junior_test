@@ -5,17 +5,19 @@
     color: $cBlue;
     position: relative;
     letter-spacing: -0.05rem;
+  transition: color .15s linear;
     &:after{
       content: '';
       position: absolute;
       left: 0;
       right: 0;
       bottom: 0;
-      border-bottom: .1rem solid $cBlue ;
+      border-bottom: .1rem solid $bgHoverBlue ;
       opacity: 0;
       transition: opacity .15s linear;
     }
   &:hover{
+    color: $bgHoverBlue;
     &:after{
       opacity: 1;
     }
