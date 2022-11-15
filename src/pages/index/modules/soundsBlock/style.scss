@@ -15,6 +15,7 @@
     font-size: 2rem;
     line-height: 3rem;
     margin-bottom: 1.7rem;
+    letter-spacing: -0.02rem;
   }
 
   &__header {
@@ -36,7 +37,7 @@
 
   &__item {
     &:not(:last-child) {
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.2rem;
     }
   }
 
