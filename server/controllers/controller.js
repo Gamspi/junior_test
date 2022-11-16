@@ -30,14 +30,17 @@ class LikeController {
   async handelLike (req, res) {
     const { id, user: userId } = req.body
     console.log(userId)
-    if (userId) {
-      const user = users.find(user => user.id === userId)
-      users = [...users.filter(user => user.id !== userId), { ...user, favorite: [...user.favorite, id] }]
-      console.log(users)
-    }
-
     const elem = bd.find(elem => elem.id === id)
     if (elem) {
+      if (userId) {
+        const user = users.find(user => user.id === userId)
+        if (!elem.isLike) {
+          users = [...users.filter(user => user.id !== userId), { ...user, favorite: [...user.favorite, id] }]
+        } else {
+          users = [...users.filter(user => user.id !== userId), { ...user, favorite: [...user.favorite.filter(f => f !== id)] }]
+        }
+      }
+
       bd = [...bd.filter(elem => elem.id !== id), { ...elem, isLike: !elem.isLike }]
       return res.json({
         status: 'success',
@@ -73,8 +76,38 @@ class Authorization {
     }
   }
 }
+
+class Filter {
+  async filter (req, res) {
+    setTimeout(() => {
+      const { isFree, isFavorite, durationMin, durationMax, category, userId } = req.body
+      console.log({ isFree, isFavorite, durationMin, durationMax, category, userId })
+      let resolve = bd
+      if (category && category.toLowerCase() !== 'all categories') {
+        resolve = resolve.filter((item) => {
+          return item.genres.includes(category.toLowerCase())
+        })
+      }
+      if (isFavorite && userId) {
+        const user = users.find(user => user.id === userId)
+        if (user) {
+          resolve = resolve.filter((item) => {
+            return user.favorite.includes(item.id)
+          })
+        }
+      }
+      res.status(200).json({
+        status: 'success',
+        data: resolve,
+        message: ''
+      })
+    }, 500)
+  }
+}
+
 module.exports = {
   LikeController: new LikeController(),
   GenreController: new GenreController(),
-  Authorization: new Authorization()
+  Authorization: new Authorization(),
+  Filter: new Filter()
 }

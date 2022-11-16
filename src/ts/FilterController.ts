@@ -1,5 +1,7 @@
+import { FilterForm } from './filterForm'
+
 export class FilterController {
-  private modal: HTMLDivElement | null
+  private modal: HTMLFormElement | null
   private closeBtn: HTMLButtonElement | null
   private openBtn: HTMLButtonElement | null
 
@@ -22,6 +24,11 @@ export class FilterController {
         this.modal?.classList.add('_open')
         document.body.addEventListener('click', this.ListenerBody)
       }
+    }
+
+    if (this.modal) {
+      const filterForm = new FilterForm(this.modal)
+      filterForm.init()
     }
   }
 
