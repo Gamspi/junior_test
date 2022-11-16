@@ -35,7 +35,7 @@
   }
 
   @include minMediaTablet {
-    padding: .7rem 2.1rem 0;
+    padding: 0.6rem 2.1rem 0.2rem;
     &__btn-play {
       margin-right: 2.9rem;
     }
@@ -121,7 +121,7 @@
     &__description {
       flex-basis: 29.7rem;
       flex-shrink: 0;
-      padding-right: 4.2rem;
+      padding-right: 6rem;
       font-weight: 500;
       display: block;
       letter-spacing: -.05rem
