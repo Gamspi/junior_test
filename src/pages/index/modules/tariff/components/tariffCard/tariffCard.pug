@@ -4,6 +4,6 @@ mixin tariffCard(title, description, cost, isWhite)
         p.tariff-card__description=description
         p.tariff-card__cost=cost
         if isWhite
-            +buttonBorder('Get started','tariff-card__start-btn', 'button')
+            +buttonBorder('Get started','tariff-card__start-btn', 'button', true)
         else
             +button('Get started','tariff-card__start-btn', 'button', true)

@@ -1,6 +1,6 @@
-.button-border{
+.button-border {
   display: block;
-  padding: 1rem 2rem;
+  padding: 1.3rem 1.9rem;
   background-color: $bgWhite;
   color: $cBlue;
   font-family: $fPoppins;
@@ -10,7 +10,15 @@
   border-radius: .8rem;
   transition: background-color .15s linear;
   border: 0.2rem solid $bWhite;
-  &:hover{
+
+  &:hover {
     background-color: $bgHoverLightBlue;
   }
+
+  @include minMediaDesktop {
+    &--big {
+      padding: 1.7rem 2.6rem;
+    }
+  }
+
 }

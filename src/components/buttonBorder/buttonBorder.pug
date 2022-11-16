@@ -1,2 +1,2 @@
-mixin buttonBorder(text, classes, type)
-    button.button-border(type=type class=classes)=text
+mixin buttonBorder(text, classes, type, isBig)
+    button.button-border(type=type class=classes + (isBig ? ' button-border--big' : '') )=text
