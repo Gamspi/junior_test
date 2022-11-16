@@ -1,7 +1,7 @@
 mixin search(text)
-    form.search(action='' novalidate)
+    form.search.j-search(action='' novalidate)
         .search__body
             button.search__btn(type='submit')
                 +useSvg('ico-search', 'search__svg')
-            input.search__input(type='text' placeholder='Search sound effects')
+            input.search__input.j-search-input(type='text' placeholder='Search sound effects')
         p.search__footer=text

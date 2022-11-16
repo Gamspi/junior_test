@@ -2,6 +2,7 @@ import './index.scss'
 import { ButtonClick } from '../../ts/ButtonClick'
 import { ChooseGenre } from '../../ts/ChooseGenre'
 import { PasswordInput } from '../../ts/PasswordInput'
+import { SearchForm } from '../../ts/SearchForm'
 import CardSwiper from '../../ts/Swiper'
 import { OpenMobileMenu } from '../../ts/OpenMobileMenu'
 import { LoginOpen } from '../../ts/LoginOpen'
@@ -65,6 +66,11 @@ class Index {
       .forEach(block => {
         const passwordInput = new PasswordInput(block as HTMLDivElement)
         passwordInput.init()
+      })
+    document.querySelectorAll('.j-search')
+      .forEach(block => {
+        const searchForm = new SearchForm(block as HTMLFormElement)
+        searchForm.init()
       })
   }
 }

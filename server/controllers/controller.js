@@ -37,7 +37,10 @@ class LikeController {
         if (!elem.isLike) {
           users = [...users.filter(user => user.id !== userId), { ...user, favorite: [...user.favorite, id] }]
         } else {
-          users = [...users.filter(user => user.id !== userId), { ...user, favorite: [...user.favorite.filter(f => f !== id)] }]
+          users = [...users.filter(user => user.id !== userId), {
+            ...user,
+            favorite: [...user.favorite.filter(f => f !== id)]
+          }]
         }
       }
 
@@ -105,9 +108,31 @@ class Filter {
   }
 }
 
+class Search {
+  async find ({ body: { value } }, res) {
+    console.log({ value })
+    if (value) {
+      res.json({
+        status: 'success',
+        data: `Ты написал "${value}", что это значит?`,
+        message: ''
+      })
+    } else {
+      res.status(400).json(
+        {
+          status: 'error',
+          data: null,
+          message: 'Ты забыл мне написать =('
+        }
+      )
+    }
+  }
+}
+
 module.exports = {
   LikeController: new LikeController(),
   GenreController: new GenreController(),
   Authorization: new Authorization(),
-  Filter: new Filter()
+  Filter: new Filter(),
+  Search: new Search()
 }
