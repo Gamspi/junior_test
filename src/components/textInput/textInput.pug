@@ -1,5 +1,7 @@
 mixin textInput (id, label, type, isRequired, jClass)
     .text-input
-        .text-input__body
+        .text-input__body(class=(type === 'password' ? 'j-password' : ''))
             label.text-input__label(for=id)=label
-            input.text-input__input(id=id placeholder=label type=type required=isRequired class=jClass)
+            input.text-input__input(id=id placeholder=label type=type required=isRequired class=jClass + (type === 'password' ? ' j-password-input' : '') maxlength=(type === 'password' && 15))
+            if type === 'password'
+                input(type=type).text-input__password-mock.j-password-mock

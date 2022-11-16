@@ -1,7 +1,9 @@
 .text-input {
   display: flex;
   flex-direction: column;
-
+  &__body{
+    position: relative;
+  }
   &__label {
     font-weight: 500;
     font-size: 1.6rem;
@@ -27,10 +29,14 @@
     border-color: transparent;
     transition: border-color .15s linear, background-color .15s linear;
     &[type='password']{
-      color: #1B4BFF;
-      font-size: 3.8rem;
+      color: transparent;
+      caret-color:$cLightGreyBlue ;
+      letter-spacing: 1.15rem;
       padding-left: 1.4rem;
-      letter-spacing: 0.3rem;
+      &::placeholder{
+        color: $cGrey;
+        letter-spacing: normal;
+      }
     }
     &:hover{
       border-color: $bPrimarySvg;
@@ -42,7 +48,19 @@
       color: $cGrey;
     }
   }
-
+  &__password-mock{
+    height: 5.2rem;
+    color: $cLightBlue;
+    font-size: 3.8rem;
+    padding-left: 1.4rem;
+    letter-spacing: 0.3rem;
+    pointer-events: none;
+    position: absolute;
+    background: transparent;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
   &._error &__input {
     border-color: $cError;
     background-color: transparentize($cError, .9);
