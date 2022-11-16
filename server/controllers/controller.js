@@ -1,5 +1,5 @@
 let bd = require('../bd/bd')
-const users = require('../bd/usersBD')
+let users = require('../bd/usersBD')
 
 class GenreController {
   async filter (req, res) {
@@ -28,13 +28,20 @@ class GenreController {
 
 class LikeController {
   async handelLike (req, res) {
-    const { id } = req.body
+    const { id, user: userId } = req.body
+    console.log(userId)
+    if (userId) {
+      const user = users.find(user => user.id === userId)
+      users = [...users.filter(user => user.id !== userId), { ...user, favorite: [...user.favorite, id] }]
+      console.log(users)
+    }
+
     const elem = bd.find(elem => elem.id === id)
     if (elem) {
       bd = [...bd.filter(elem => elem.id !== id), { ...elem, isLike: !elem.isLike }]
       return res.json({
         status: 'success',
-        data: { ...elem, isLike: !elem.isLike },
+        data: { ...elem, isLike: !elem.isLike, user: users.find(user => user.id === userId) },
         message: ''
       })
     } else {
