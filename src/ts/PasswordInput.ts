@@ -7,8 +7,6 @@ export class PasswordInput {
   }
 
   init () {
-    console.log(this.input)
-    console.log(this.mockInput)
     if (this.input && this.mockInput) {
       this.input.oninput = e => {
         const target = e.target as HTMLInputElement
