@@ -1,4 +1,5 @@
 import './index.scss'
+import { AudioController } from '../../ts/AudioController'
 import { ButtonClick } from '../../ts/ButtonClick'
 import { ChooseGenre } from '../../ts/ChooseGenre'
 import { PasswordInput } from '../../ts/PasswordInput'
@@ -19,23 +20,23 @@ class Index {
   init () {
     document.querySelectorAll('.j-button-click')
       .forEach(block => {
-        const audioController = new ButtonClick(block as HTMLButtonElement)
-        audioController.init()
+        const buttonClick = new ButtonClick(block as HTMLButtonElement)
+        buttonClick.init()
       })
     document.querySelectorAll('.j-swiper')
       .forEach(block => {
-        const audioController = new CardSwiper(block as HTMLButtonElement)
-        audioController.init()
+        const cardSwiper = new CardSwiper(block as HTMLButtonElement)
+        cardSwiper.init()
       })
     document.querySelectorAll('.j-mobile-container')
       .forEach(block => {
-        const audioController = new OpenMobileMenu(block as HTMLDivElement)
-        audioController.init()
+        const openMobileMenu = new OpenMobileMenu(block as HTMLDivElement)
+        openMobileMenu.init()
       })
     document.querySelectorAll('.j-login-form')
       .forEach(block => {
-        const audioController = new LoginOpen(block as HTMLDivElement)
-        audioController.init()
+        const loginOpen = new LoginOpen(block as HTMLDivElement)
+        loginOpen.init()
       })
     document.querySelectorAll('.j-login-form')
       .forEach(block => {
@@ -71,6 +72,11 @@ class Index {
       .forEach(block => {
         const searchForm = new SearchForm(block as HTMLFormElement)
         searchForm.init()
+      })
+    document.querySelectorAll('.j-audio')
+      .forEach(block => {
+        const audioController = new AudioController(block as HTMLDivElement)
+        audioController.init()
       })
   }
 }

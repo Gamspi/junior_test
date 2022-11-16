@@ -37,7 +37,8 @@
     transition: opacity .3s linear .3s;
   }
   &__title{
-    font-weight: 600; //TODO в макете  500
+    padding-right: 2.5rem;
+    font-weight: 500;
     font-size: 1.6rem;
     line-height: 138%;
     color: $cLightGreyBlue;

@@ -35,6 +35,8 @@ export class ChooseGenre extends SoundItemGeneration {
       if (this.list) this.list.innerHTML = ''
       data.forEach(item => this.itemGeneration(item))
       this.itemInit()
+    }).catch((e) => {
+      console.error('Не предвиденная ошибка', e)
     }).finally(() => {
       if (finallyFunc) finallyFunc()
     })
