@@ -9,11 +9,13 @@ export class LoginOpen {
   private isAuth: boolean;
   private readonly userCookie: ReturnType<typeof CookeHelper.getCookie>;
   private menu: HTMLElement | null;
+  private burger: HTMLElement | null;
 
   constructor (private container: HTMLDivElement) {
     this.openButtons = document.querySelectorAll('.j-login-form-btn-open')
     this.closeButtons = document.querySelectorAll('.j-login-form-btn-close')
     this.menu = document.querySelector('.j-mobile-menu')
+    this.burger = document.querySelector('.j-burger')
     this.isAuth = !!sessionStorage.getItem('auth')
     this.userCookie = CookeHelper.getCookie('user')
     this.handelCloseForm = this.handelCloseForm.bind(this)
@@ -28,6 +30,7 @@ export class LoginOpen {
       if (this.isAuth) btn.innerHTML = 'Log out'
       btn.onclick = () => {
         if (this.menu) this.menu.classList.remove('_open')
+        if (this.burger) this.burger.classList.remove('_active')
         this.isAuth = !!sessionStorage.getItem('auth')
         if (!this.isAuth) {
           this.container.classList.add('_open')
