@@ -1,4 +1,4 @@
-import { TimeConverter } from './TimeConverter'
+import { TimeConverter } from './utils/helpers/TimeConverter'
 
 class SliderInput {
   private readonly rangeMin: HTMLInputElement | null

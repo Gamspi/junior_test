@@ -11,14 +11,4 @@ export class TimeConverter {
     val = Math.floor(val)
     return val < 10 ? '0' + val : val
   }
-
-  static convertOut (str: string) {
-    const numArr = str.replace(/\D/, '').replace(/(\d{1,2}(?=(?:\d\d)+(?!\d)))/g, '$1 ').split(' ')
-    return numArr.reduce((akk, elem, index) => {
-      if (index !== numArr.length - 1) {
-        return +akk + (+elem * 60)
-      }
-      return +akk + +elem
-    }, 0)
-  }
 }

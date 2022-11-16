@@ -1,4 +1,4 @@
-import { TimeConverter } from './TimeConverter'
+import { TimeConverter } from './utils/helpers/TimeConverter'
 
 export class AudioController {
   private readonly track: HTMLAudioElement | null

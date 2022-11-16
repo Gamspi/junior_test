@@ -6,6 +6,7 @@
   line-height: 138%;
   transition: color .15s linear;
   letter-spacing: -0.05rem;
+  position: relative;
   &:after {
     content: '';
     height: .2rem;
@@ -21,7 +22,7 @@
 
   &._active {
     color: $secondaryColor;
-    position: relative;
+
 
     &:after {
       opacity: 1;
