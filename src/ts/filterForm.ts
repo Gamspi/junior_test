@@ -29,7 +29,7 @@ export class FilterForm {
 	    e.preventDefault()
 	    if (!this.isSubmit) {
 	      this.isSubmit = true
-
+	      this.userId = sessionStorage.getItem('auth')
 	      const isFree = this.freeInput?.checked
 	      const isFavorite = this.favoriteInput?.checked
 	      const durationMin = this.durationMinInput?.value
