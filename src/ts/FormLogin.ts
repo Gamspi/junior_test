@@ -8,6 +8,7 @@ export class FormLogin {
   private rememberInput: HTMLInputElement | null;
   // eslint-disable-next-line no-undef
   private loginBtn: NodeListOf<HTMLButtonElement>;
+  private isSubmit : boolean = false
 
   constructor (public form: HTMLFormElement) {
     this.loginBtn = document.querySelectorAll('.j-login-form-btn-open')
@@ -18,28 +19,33 @@ export class FormLogin {
   }
 
   submit (resolve?: ()=>void, reject? : ()=>void) {
-    const email = this.emailInput?.value || ''
-    const password = this.passwordInput?.value || ''
-    const remember = this.rememberInput?.checked || false
-    if (email && password) {
-      Xhr.Post<MyRequest<MusicTrack>>('http://localhost:5000/api/auth/authorization', {
-        email,
-        password
-      }).then(({ data: { id } }) => {
-        if (remember) {
-          document.cookie = `user=${id}`
-        }
-        sessionStorage.setItem('auth', `${id}`)
-        if (resolve)resolve()
-        this.form.classList.remove('_open')
-        BodyBlock.unBlock()
-        this.changeTextIntroBtns('Log out')
-      }).catch((e) => {
-        console.log(e)
-        if (reject) reject()
-      })
-    } else {
-      throw Error('не предвиденная ошибка')
+    if (!this.isSubmit) {
+      this.isSubmit = true
+      const email = this.emailInput?.value || ''
+      const password = this.passwordInput?.value || ''
+      const remember = this.rememberInput?.checked || false
+      if (email && password) {
+        Xhr.Post<MyRequest<MusicTrack>>('http://localhost:5000/api/auth/authorization', {
+          email,
+          password
+        }).then(({ data: { id } }) => {
+          if (remember) {
+            document.cookie = `user=${id}`
+          }
+          sessionStorage.setItem('auth', `${id}`)
+          if (resolve)resolve()
+          this.form.classList.remove('_open')
+          BodyBlock.unBlock()
+          this.changeTextIntroBtns('Log out')
+        }).catch((e) => {
+          console.log(e)
+          if (reject) reject()
+        }).finally(() => {
+          this.isSubmit = false
+        })
+      } else {
+        throw Error('не предвиденная ошибка')
+      }
     }
   }
 

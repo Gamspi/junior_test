@@ -1,8 +1,10 @@
 import { Xhr } from './api/Xhr/Xhr'
 import { MyRequest } from './types/types'
+
 export class SearchForm {
 	private input: HTMLInputElement | null;
 	private value: string = '';
+
 	constructor (private form: HTMLFormElement) {
 	  this.input = form.querySelector('.j-search-input')
 	}
@@ -15,6 +17,7 @@ export class SearchForm {
 	  }
 	  this.form.onsubmit = e => {
 	    e.preventDefault()
+	    if (this.input) this.input.disabled = true
 	    Xhr.Post<MyRequest<string>>('http://localhost:5000/api/search/word', {
 	      value: this.value
 	    }).then(({ data }) => {
@@ -23,7 +26,10 @@ export class SearchForm {
 	    }).catch(e => {
 	      console.error('Непредвиденная ошибка', e)
 	    }).finally(() => {
-	      if (this.input) this.input.value = this.value = ''
+	      if (this.input) {
+	        this.input.value = this.value = ''
+	        this.input.disabled = false
+	      }
 	    })
 	  }
 	}

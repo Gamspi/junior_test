@@ -47,7 +47,6 @@ class LikeController {
             }]
           }
         }
-
         bd = [...bd.filter(elem => elem.id !== id), { ...elem, isLike: !elem.isLike }]
         return res.json({
           status: 'success',
@@ -83,7 +82,7 @@ class Authorization {
           data: {}
         })
       }
-    }, 500)
+    }, DELAY)
   }
 }
 
