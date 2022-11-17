@@ -6,6 +6,7 @@ import { Status } from './utils/enums/status'
 export class FormLogin {
   private emailInput: HTMLInputElement | null;
   private passwordInput: HTMLInputElement | null;
+  private passwordMockInput: HTMLInputElement | null;
   private rememberInput: HTMLInputElement | null;
   // eslint-disable-next-line no-undef
   private loginBtn: NodeListOf<HTMLButtonElement>;
@@ -15,6 +16,7 @@ export class FormLogin {
     this.loginBtn = document.querySelectorAll('.j-login-form-btn-open')
     this.emailInput = this.form.querySelector('.j-login-email')
     this.passwordInput = this.form.querySelector('.j-login-password')
+    this.passwordMockInput = this.form.querySelector('.j-password-mock')
     this.rememberInput = this.form.querySelector('#isRemember')
     this.changeTextIntroBtns = this.changeTextIntroBtns.bind(this)
   }
@@ -39,6 +41,7 @@ export class FormLogin {
             this.form.classList.remove('_open')
             BodyBlock.unBlock()
             this.changeTextIntroBtns('Log out')
+            this.removeToDefault()
           } else {
             if (reject) reject(message)
           }
@@ -51,6 +54,13 @@ export class FormLogin {
         throw Error('не предвиденная ошибка')
       }
     }
+  }
+
+  removeToDefault () {
+    if (this.emailInput) this.emailInput.value = ''
+    if (this.passwordInput) this.passwordInput.value = ''
+    if (this.passwordMockInput) this.passwordMockInput.value = ''
+    if (this.rememberInput) this.rememberInput.checked = false
   }
 
   changeTextIntroBtns (text: string) {
