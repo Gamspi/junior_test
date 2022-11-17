@@ -6,7 +6,6 @@ class CalcSelect {
   private btn: HTMLButtonElement | null
 
   private isOpen = false
-  private bodyHeight: number = 0
 
   constructor (private container: HTMLElement, private func?: () => void) {
     this.btn = container.querySelector('.j-select-btn')

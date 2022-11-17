@@ -4,8 +4,8 @@ class SliderInput {
   private readonly rangeMin: HTMLInputElement | null
   private readonly progress: HTMLDivElement | null
   private readonly rangeMax: HTMLInputElement | null
-  private minValue: number = 0
-  private maxValue: number = 100
+  private minValue = 0
+  private maxValue = 100
 
   constructor (private container: HTMLElement) {
     this.progress = container.querySelector('.j-progress')

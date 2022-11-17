@@ -9,7 +9,7 @@ export class FormLogin {
   private rememberInput: HTMLInputElement | null;
   // eslint-disable-next-line no-undef
   private loginBtn: NodeListOf<HTMLButtonElement>;
-  private isSubmit : boolean = false
+  private isSubmit = false
 
   constructor (public form: HTMLFormElement) {
     this.loginBtn = document.querySelectorAll('.j-login-form-btn-open')

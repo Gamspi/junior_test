@@ -1,9 +1,9 @@
 import Swiper, { Navigation, Pagination } from 'swiper'
 
 class CardSwiper {
-  private paginationId: string=''
-  private swiperButtonNextId: string=''
-  private swiperButtonPrevId: string=''
+  private paginationId = ''
+  private swiperButtonNextId = ''
+  private swiperButtonPrevId = ''
   private readonly spaceBetween: number
   private readonly pagination: HTMLDivElement | null | undefined
   private readonly swiperButtonNext: HTMLButtonElement | null

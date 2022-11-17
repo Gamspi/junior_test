@@ -3,7 +3,7 @@ import { TimeConverter } from './utils/helpers/TimeConverter'
 export class AudioController {
   private readonly track: HTMLAudioElement | null
   private readonly playBtn: HTMLButtonElement | null
-  private currentTime: string = '0:00'
+  private currentTime = '0:00'
   private readonly $time: HTMLDivElement | null
 
   constructor (private container: HTMLDivElement) {

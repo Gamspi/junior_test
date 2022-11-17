@@ -1,12 +1,8 @@
 export class Xhr {
   private static xhr: XMLHttpRequest;
-  private static URL: string = '';
+  private static URL = '';
 
-  // eslint-disable-next-line no-useless-constructor
-  constructor () {
-  }
-
-  static async Get<T> (URL: string, param?: Object):Promise<T> {
+  static async Get<T> (URL: string, param?: object):Promise<T> {
     this.URL = URL
     const url = !param ? this.URL : `${this.URL}?${this.getOptions(param)}`
     return this.send<T>('GET', url)
@@ -37,7 +33,7 @@ export class Xhr {
     })
   }
 
-  private static getOptions (obj:Object) {
+  private static getOptions (obj:object) {
     return Object.entries(obj).map((item) => { return item.join('=') }).join('&')
   }
 }

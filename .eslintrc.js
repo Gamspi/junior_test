@@ -4,7 +4,9 @@ module.exports = {
     es2021: true
   },
   extends: [
-    'standard'
+    'standard',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -16,7 +18,6 @@ module.exports = {
   ],
   rules: {
     'no-new': 'off',
-    'no-tabs': 'off',
-    'no-mixed-spaces-and-tabs': 'off'
+    '@typescript-eslint/no-non-null-assertion': 'off'
   }
 }
