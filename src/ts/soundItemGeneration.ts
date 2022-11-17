@@ -14,6 +14,7 @@ export class SoundItemGeneration {
     if (this.list) {
       const element = document.createElement('li')
       element.classList.add('sounds-block__item')
+      // при изменении информации в компоненте следует изменить ее и файле src/pages/index/modules/soundsBlock/components/soundItem/soundItem.pug
       element.innerHTML = `
                         <div class="sound-item j-audio">
                           <audio class="j-audio-track" src="${src}"></audio>
@@ -47,7 +48,7 @@ export class SoundItemGeneration {
                                               </svg>
                                 </div>
                               </div>
-                            </div><a class="sound-item__btn-download"  href="${src}" download>
+                            </div><a class="sound-item__btn-download j-download-file" href="http://localhost:5000/api/download/download" download="name">
                                           <svg>
                                             <use xlink:href="#ico-download"></use>
                                           </svg></a><a class="sound-item__btn-more" href="#">

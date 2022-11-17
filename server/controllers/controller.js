@@ -1,5 +1,6 @@
 let bd = require('../bd/bd')
 let users = require('../bd/usersBD')
+
 const DELAY = 500
 
 class GenreController {
@@ -137,10 +138,18 @@ class Search {
   }
 }
 
+class DownloadFile {
+  download (req, res) {
+    console.log(req)
+    return res.download('./server/bd/SoundHelix-Song.mp3', 'name.mp3')
+  }
+}
+
 module.exports = {
   LikeController: new LikeController(),
   GenreController: new GenreController(),
   Authorization: new Authorization(),
   Filter: new Filter(),
-  Search: new Search()
+  Search: new Search(),
+  DownloadFile: new DownloadFile()
 }
