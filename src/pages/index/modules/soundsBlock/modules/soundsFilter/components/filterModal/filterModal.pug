@@ -2,7 +2,7 @@ extends constants
 block content
     form.filter-modal.j-filter-modal(action='')
         .filter-modal__container
-            button.filter-modal__close-btn.j-filter-close
+            button.filter-modal__close-btn.j-filter-close(type='button')
                 +useSvg('ico-login-close', '.filter-modal__close-svg')
             h4.filter-modal__title Filter
             .filter-modal__time-slider
