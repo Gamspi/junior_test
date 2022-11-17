@@ -7,7 +7,10 @@ export class DownloadSoundFile {
   init () {
     this.button.onclick = () => {
       if (this.id) {
-        this.downloadFile().catch(e => console.error('Не предвиденная ошибка', e))
+        this.button.disabled = true
+        this.downloadFile().catch(e => console.error('Не предвиденная ошибка', e)).finally(() => {
+          this.button.disabled = true
+        })
       }
     }
   }
