@@ -8,4 +8,4 @@ app.use(cors())
 app.use(express.json())
 app.use('/api', router)
 
-app.listen(PORT, () => console.log('server started =)'))
+app.listen(PORT, () => console.log(`server started on ${PORT} =)`))
