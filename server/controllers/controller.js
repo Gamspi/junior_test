@@ -143,7 +143,7 @@ class DownloadFile {
     setTimeout(() => {
       const { id } = req.query
       if (id) {
-        return res.download('./server/bd/SoundHelix-Song.mp3', `sound-${id}.mp3`)
+        return res.download('./server/bd/files/SoundHelix-Song.mp3', `sound-${id}.mp3`)
       } else {
         res.status(404).json({
           status: 'error',
