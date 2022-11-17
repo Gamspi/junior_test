@@ -139,9 +139,19 @@ class Search {
 }
 
 class DownloadFile {
-  download (req, res) {
-    console.log(req)
-    return res.download('./server/bd/SoundHelix-Song.mp3', 'name.mp3')
+  async download (req, res) {
+    setTimeout(() => {
+      const { id } = req.query
+      if (id) {
+        return res.download('./server/bd/SoundHelix-Song.mp3', `sound-${id}.mp3`)
+      } else {
+        res.status(404).json({
+          status: 'error',
+          data: {},
+          message: 'Not find'
+        })
+      }
+    }, DELAY)
   }
 }
 

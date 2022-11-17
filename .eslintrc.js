@@ -18,6 +18,7 @@ module.exports = {
   ],
   rules: {
     'no-new': 'off',
+    'no-useless-constructor': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off'
   }
 }

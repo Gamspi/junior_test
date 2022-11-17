@@ -1,4 +1,6 @@
 import { AudioController } from './AudioController'
+import { ButtonClick } from './ButtonClick'
+import { DownloadSoundFile } from './DownloadSoundFile'
 import { LikeController } from './LikeController'
 import { MusicTrack } from './types/types'
 
@@ -48,10 +50,10 @@ export class SoundItemGeneration {
                                               </svg>
                                 </div>
                               </div>
-                            </div><a class="sound-item__btn-download j-download-file" href="http://localhost:5000/api/download/download" download="name">
+                            </div><button class="sound-item__btn-download j-download-file" data-id='${id}'>
                                           <svg>
                                             <use xlink:href="#ico-download"></use>
-                                          </svg></a><a class="sound-item__btn-more" href="#">
+                                          </svg></button><a class="sound-item__btn-more" href="#">
                                           <svg>
                                             <use xlink:href="#ico-more"></use>
                                           </svg></a>
@@ -63,6 +65,11 @@ export class SoundItemGeneration {
   }
 
   itemInit () {
+    document.querySelectorAll('.j-button-click')
+      .forEach(block => {
+        const buttonClick = new ButtonClick(block as HTMLButtonElement)
+        buttonClick.init()
+      })
     document.querySelectorAll('.j-audio')
       .forEach(block => {
         const audioController = new AudioController(block as HTMLDivElement)
@@ -72,6 +79,11 @@ export class SoundItemGeneration {
       .forEach(block => {
         const likeController = new LikeController(block as HTMLInputElement)
         likeController.init()
+      })
+    document.querySelectorAll('.j-download-file')
+      .forEach(button => {
+        const downloadSoundFile = new DownloadSoundFile(button as HTMLButtonElement)
+        downloadSoundFile.init()
       })
   }
 }

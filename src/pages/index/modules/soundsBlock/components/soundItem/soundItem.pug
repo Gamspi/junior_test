@@ -15,7 +15,7 @@ mixin soundItem(src,genres,description)
         .sound-item__actions
             .sound-item__btn-like
                 include components/likeButton/likeBitton
-            button.sound-item__btn-download.j-download-file(type='button')
+            button.sound-item__btn-download.j-download-file(type='button' datd-id)
                 +useSvg('ico-download')
             a.sound-item__btn-more(href='#')
                 +useSvg('ico-more')
