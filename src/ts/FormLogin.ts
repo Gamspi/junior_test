@@ -1,6 +1,7 @@
 import { Xhr } from './api/Xhr/Xhr'
 import { BodyBlock } from './BodyBlock'
 import { MyRequest, MusicTrack } from './types/types'
+import { Status } from './utils/enums/status'
 
 export class FormLogin {
   private emailInput: HTMLInputElement | null;
@@ -18,7 +19,7 @@ export class FormLogin {
     this.changeTextIntroBtns = this.changeTextIntroBtns.bind(this)
   }
 
-  submit (resolve?: ()=>void, reject? : ()=>void) {
+  logInSubmit (resolve?: ()=>void, reject? : (message: string)=>void) {
     if (!this.isSubmit) {
       this.isSubmit = true
       const email = this.emailInput?.value || ''
@@ -28,18 +29,21 @@ export class FormLogin {
         Xhr.Post<MyRequest<MusicTrack>>('http://localhost:5000/api/auth/authorization', {
           email,
           password
-        }).then(({ data: { id } }) => {
-          if (remember) {
-            document.cookie = `user=${id}`
+        }).then(({ data: { id }, status, message }) => {
+          if (status === Status.SUCCESS) {
+            if (remember) {
+              document.cookie = `user=${id}`
+            }
+            sessionStorage.setItem('auth', `${id}`)
+            if (resolve)resolve()
+            this.form.classList.remove('_open')
+            BodyBlock.unBlock()
+            this.changeTextIntroBtns('Log out')
+          } else {
+            if (reject) reject(message)
           }
-          sessionStorage.setItem('auth', `${id}`)
-          if (resolve)resolve()
-          this.form.classList.remove('_open')
-          BodyBlock.unBlock()
-          this.changeTextIntroBtns('Log out')
         }).catch((e) => {
           console.log(e)
-          if (reject) reject()
         }).finally(() => {
           this.isSubmit = false
         })

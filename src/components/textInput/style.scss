@@ -60,8 +60,9 @@
     left: 0;
     bottom: 0;
     right: 0;
+    z-index: 2;
   }
-  &._error &__input {
+  &__input._error {
     border-color: $cError;
     background-color: transparentize($cError, .9);
 

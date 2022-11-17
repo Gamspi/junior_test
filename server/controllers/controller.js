@@ -76,7 +76,7 @@ class Authorization {
           message: ''
         })
       } else {
-        return res.status(400).json({
+        return res.status(200).json({
           message: 'Not find',
           status: 'error',
           data: {}
