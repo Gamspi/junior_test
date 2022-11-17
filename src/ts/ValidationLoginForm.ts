@@ -37,6 +37,9 @@ init () {
     } else {
       console.log('submit')
       super.logInSubmit(undefined, this.handelError.bind(this))
+      this.inputs.forEach(input => {
+        input.classList.remove('_error')
+      })
     }
   }
 }
