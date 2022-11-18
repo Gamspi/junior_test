@@ -7,8 +7,9 @@ mixin header (nav)
             a.header__logo(href="/")
                 +logo()
             .header__panel.j-mobile-menu
-                nav.header__nav
-                    +menu(nav)
-                +button('Login', 'header__login-btn j-login-form-btn-open', 'button')
+                .header__panel-contaner
+                    nav.header__nav
+                        +menu(nav)
+                    +button('Login', 'header__login-btn j-login-form-btn-open', 'button')
             .header__burger
                 include components/burger/burder
