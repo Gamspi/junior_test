@@ -14,7 +14,7 @@
     font-size: 1.4rem;
     line-height: 1.4rem;
     text-align: center;
-    margin-bottom: 1.7rem;
+    margin-bottom: 1.9rem;
   }
 
   &__title {
@@ -25,12 +25,12 @@
     font-size: 2rem;
     line-height: 3rem;
     color: $secondaryColor;
-    margin-bottom: 4.7rem;
-    letter-spacing: -0.02rem;
+    margin-bottom: 4.6rem;
+    letter-spacing: -.05rem;
   }
 
   &__item:not(:last-child) {
-    margin-bottom: 2.8rem;
+    margin-bottom: 2.9rem;
   }
 
   @include minMediaTablet {

@@ -1,5 +1,5 @@
 .tariff-card {
-  padding: 2.4rem 3.017rem 3.8rem;
+  padding: 2.3rem 3.017rem 3.8rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -15,7 +15,7 @@
     font-size: 2rem;
     line-height: 3rem;
     margin-bottom: 1.6rem;
-    letter-spacing: -.02rem;
+    letter-spacing: -.05rem;
   }
 
   &__description {
@@ -23,15 +23,15 @@
     font-size: 1.6rem;
     line-height: 139%;
     flex-grow: 1;
-    letter-spacing: -.05rem;
+    letter-spacing: -.07rem;
   }
 
   &__cost {
     font-weight: 600;
     font-size: 1.8rem;
     line-height: 172%;
-    margin-bottom: 1.4rem;
-    letter-spacing: -.05rem;
+    margin-bottom: 1.3rem;
+    letter-spacing: -.1rem;
   }
 
   &__start-btn {
@@ -41,6 +41,7 @@
   &--white {
     background: $bgLightBlue;
     border-color: transparent;
+    padding: 2.2rem 2.7rem 2.8rem;
   }
 
   @include minMediaTablet {

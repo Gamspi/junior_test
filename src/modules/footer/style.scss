@@ -2,7 +2,7 @@
 
 .footer {
   background: $bgDarkBlue;
-  padding: 5rem 0 3.7rem;
+  padding: 5rem 0 4.1rem;
 
   &__container {
     padding: 0 4.5rem 0 1.6rem;
@@ -23,6 +23,7 @@
   }
 
   &__description {
+    margin-right: -0.6rem;
     margin-bottom: 1.6rem;
   }
 
@@ -33,7 +34,7 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 2.7rem;
+    row-gap: 2.6rem;
     column-gap: 3.7rem;
   }
 

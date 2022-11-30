@@ -12,7 +12,7 @@ block content
                     include modules/soundsFilter/soundsFilter
             ul.sounds-block__list.j-sound-list
                 each item in sounds
-                  li.sounds-block__item
+                  li.sounds-block__item._visible
                       +soundItem(item.src, item.genres, item.description)
             .sounds-block__link
                 +link('See all sound effects')
