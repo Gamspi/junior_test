@@ -4,7 +4,6 @@
   &._open {
     .custom-select__body {
       max-height: 30rem;
-      overflow: auto;
     }
     .custom-select__header {
       border-radius: .8rem .8rem 0 0  ;
@@ -95,6 +94,10 @@
   &__arrow{
     width: 2.4rem;
     height: 2.4rem;
+  }
+  &__list {
+    overflow: auto;
+    max-height: 30rem;
   }
 }
 
