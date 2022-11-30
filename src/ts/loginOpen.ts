@@ -1,11 +1,11 @@
 import { BodyBlock } from './bodyBlock'
-import { ClassesEnums } from './utils/enums/classEnums'
+import { LOG_OUT, LOGIN } from './constants/constants'
+import { ClassEnums } from './utils/enums/classEnums'
+import { StorageItemEnums } from './utils/enums/storageItemEnums'
 import { CookeHelper } from './utils/helpers/cookeHelper'
 
 export class LoginOpen {
-  // eslint-disable-next-line no-undef
   private openButtons: NodeListOf<HTMLButtonElement>
-  // eslint-disable-next-line no-undef
   private closeButtons: NodeListOf<HTMLButtonElement>
   private isAuth: boolean;
   private readonly userCookie: ReturnType<typeof CookeHelper.getCookie>;
@@ -17,29 +17,28 @@ export class LoginOpen {
     this.closeButtons = document.querySelectorAll('.j-login-form-btn-close')
     this.menu = document.querySelector('.j-mobile-menu')
     this.burger = document.querySelector('.j-burger')
-    this.isAuth = !!sessionStorage.getItem('auth')
-    this.userCookie = CookeHelper.getCookie('user')
-    this.handelCloseForm = this.handelCloseForm.bind(this)
+    this.isAuth = !!sessionStorage.getItem(StorageItemEnums.AUTH)
+    this.userCookie = CookeHelper.getCookie(StorageItemEnums.AUTH)
   }
 
   init () {
     if (this.userCookie) {
-      sessionStorage.setItem('auth', this.userCookie)
-      this.isAuth = !!sessionStorage.getItem('auth')
+      sessionStorage.setItem(StorageItemEnums.AUTH, this.userCookie)
+      this.isAuth = !!sessionStorage.getItem(StorageItemEnums.AUTH)
     }
     this.openButtons.forEach(btn => {
-      if (this.isAuth) btn.innerHTML = 'Log out'
+      if (this.isAuth) btn.innerHTML = LOG_OUT
       btn.onclick = () => {
-        if (this.menu) this.menu.classList.remove(ClassesEnums.OPEN)
-        if (this.burger) this.burger.classList.remove('_active')
-        this.isAuth = !!sessionStorage.getItem('auth')
+        if (this.menu) this.menu.classList.remove(ClassEnums.OPEN)
+        if (this.burger) this.burger.classList.remove(ClassEnums.ACTIVE)
+        this.isAuth = !!sessionStorage.getItem(StorageItemEnums.AUTH)
         if (!this.isAuth) {
-          this.container.classList.add(ClassesEnums.OPEN)
+          this.container.classList.add(ClassEnums.OPEN)
           BodyBlock.block()
         } else {
-          CookeHelper.deleteCookie('user')
-          sessionStorage.removeItem('auth')
-          btn.innerHTML = 'Login'
+          CookeHelper.deleteCookie(StorageItemEnums.AUTH)
+          sessionStorage.removeItem(StorageItemEnums.AUTH)
+          btn.innerHTML = LOGIN
         }
       }
     })
@@ -54,8 +53,8 @@ export class LoginOpen {
     }
   }
 
-  handelCloseForm () {
-    this.container.classList.remove(ClassesEnums.OPEN)
+  handelCloseForm = () => {
+    this.container.classList.remove(ClassEnums.OPEN)
     BodyBlock.unBlock()
   }
 }

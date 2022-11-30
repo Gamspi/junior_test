@@ -1,11 +1,12 @@
-import { ClassesEnums } from './utils/enums/classEnums'
+import { ERROR_MASSAGES } from './constants/constants'
+import { ClassEnums } from './utils/enums/classEnums'
 import { TimeConverter } from './utils/helpers/timeConverter'
 
 export class AudioController {
   private readonly track: HTMLAudioElement | null
   private readonly playBtn: HTMLButtonElement | null
-  private currentTime = '0:00'
   private readonly $time: HTMLDivElement | null
+  private currentTime = '0:00'
 
   constructor (private container: HTMLDivElement) {
     this.track = container.querySelector('.j-audio-track')
@@ -19,11 +20,11 @@ export class AudioController {
       this.playBtn.onclick = () => {
         if (!this.track?.paused) {
           this.track?.pause()
-          this.playBtn?.classList.remove(ClassesEnums.PLAY)
+          this.playBtn?.classList.remove(ClassEnums.PLAY)
         } else {
           this.track?.play().then(() => {
-            this.playBtn?.classList.add(ClassesEnums.PLAY)
-          }).catch(() => console.log('Непредвиденная ошибка'))
+            this.playBtn?.classList.add(ClassEnums.PLAY)
+          }).catch(() => console.log(ERROR_MASSAGES))
         }
       }
     }
@@ -33,7 +34,7 @@ export class AudioController {
         if (this.$time) this.$time.innerText = this.currentTime
       }
       this.track.onended = () => {
-        this.playBtn?.classList.remove(ClassesEnums.PLAY)
+        this.playBtn?.classList.remove(ClassEnums.PLAY)
       }
     }
   }

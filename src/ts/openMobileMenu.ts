@@ -1,9 +1,9 @@
 import { BodyBlock } from './bodyBlock'
-import { ClassesEnums } from './utils/enums/classEnums'
+import { ClassEnums } from './utils/enums/classEnums'
 
 export class OpenMobileMenu {
   private burger: HTMLButtonElement | null
-  private menu: Element | null
+  private menu: HTMLElement | null
 
   constructor (private container: HTMLDivElement) {
     this.menu = container.querySelector('.j-mobile-menu')
@@ -14,13 +14,13 @@ export class OpenMobileMenu {
     if (this.burger) {
       this.burger.onclick = () => {
         if (this.menu) {
-          this.menu.classList.toggle(ClassesEnums.OPEN)
-          if (this.menu.classList.contains(ClassesEnums.OPEN)) {
+          this.menu.classList.toggle(ClassEnums.OPEN)
+          if (this.menu.classList.contains(ClassEnums.OPEN)) {
             BodyBlock.block()
-            this.burger?.classList.add(ClassesEnums.ACTIVE)
+            this.burger?.classList.add(ClassEnums.ACTIVE)
           } else {
             BodyBlock.unBlock()
-            this.burger?.classList.remove(ClassesEnums.ACTIVE)
+            this.burger?.classList.remove(ClassEnums.ACTIVE)
           }
         }
       }

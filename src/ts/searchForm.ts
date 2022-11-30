@@ -1,4 +1,5 @@
 import { Xhr } from './api/xhr/xhr'
+import { API_URL, ERROR_MASSAGES } from './constants/constants'
 import { MyRequest } from './types/types'
 
 export class SearchForm {
@@ -18,13 +19,13 @@ export class SearchForm {
     this.form.onsubmit = e => {
       e.preventDefault()
       if (this.input) this.input.disabled = true
-      Xhr.Post<MyRequest<string>>('http://localhost:5000/api/search/word', {
+      Xhr.Post<MyRequest<string>>(`${API_URL}/search/word`, {
         value: this.value
       }).then(({ data }) => {
         console.log(data)
         alert(data)
       }).catch(e => {
-        console.error('Непредвиденная ошибка', e)
+        console.error(ERROR_MASSAGES, e)
       }).finally(() => {
         if (this.input) {
           this.input.value = this.value = ''

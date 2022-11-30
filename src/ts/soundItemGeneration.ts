@@ -3,21 +3,22 @@ import { ButtonClick } from './buttonClick'
 import { DownloadSoundFile } from './downloadSoundFile'
 import { LikeController } from './likeController'
 import { MusicTrack } from './types/types'
+import { ClassEnums } from './utils/enums/classEnums'
 
 export class SoundItemGeneration {
   list: HTMLElement | null;
 
   constructor (private container: HTMLElement) {
     this.list = container.querySelector('.j-sound-list')
-    this.itemInit = this.itemInit.bind(this)
   }
 
-  itemGeneration ({ src, name, description, genres, isLike, id }: MusicTrack) {
-    if (this.list) {
-      const element = document.createElement('li')
-      element.classList.add('sounds-block__item')
-      // при изменении информации в компоненте следует изменить ее и файле src/pages/index/modules/soundsBlock/components/soundItem/soundItem.pug
-      element.innerHTML = `
+  itemGeneration (items: MusicTrack[]) {
+    items.forEach(({ src, name, description, genres, isLike, id }, index) => {
+      if (this.list) {
+        const element = document.createElement('li')
+        element.classList.add('sounds-block__item')
+        // при изменении информации в компоненте следует изменить ее и файле src/pages/index/modules/soundsBlock/components/soundItem/soundItem.pug
+        element.innerHTML = `
                         <div class="sound-item j-audio">
                           <audio class="j-audio-track" src="${src}"></audio>
                           <div class="sound-item__btn-play">
@@ -60,11 +61,15 @@ export class SoundItemGeneration {
                           </div>
                         </div>
               `
-      this.list.append(element)
-    }
+        this.list!.append(element)
+        setTimeout(() => {
+          element.classList.add(ClassEnums.VISIBLE)
+        }, 50 * index)
+      }
+    })
   }
 
-  itemInit () {
+  itemInit = () => {
     document.querySelectorAll('.j-button-click')
       .forEach(block => {
         const buttonClick = new ButtonClick(block as HTMLButtonElement)

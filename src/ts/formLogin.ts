@@ -1,14 +1,16 @@
 import { Xhr } from './api/xhr/xhr'
 import { BodyBlock } from './bodyBlock'
+import { API_URL, ERROR_MASSAGES, LOG_OUT } from './constants/constants'
 import { MyRequest, MusicTrack } from './types/types'
+import { ClassEnums } from './utils/enums/classEnums'
 import { StatusEnums } from './utils/enums/statusEnums'
+import { StorageItemEnums } from './utils/enums/storageItemEnums'
 
 export class FormLogin {
-  private emailInput: HTMLInputElement | null;
-  private passwordInput: HTMLInputElement | null;
-  private passwordMockInput: HTMLInputElement | null;
-  private rememberInput: HTMLInputElement | null;
-  // eslint-disable-next-line no-undef
+  private readonly emailInput: HTMLInputElement | null;
+  private readonly passwordInput: HTMLInputElement | null;
+  private readonly passwordMockInput: HTMLInputElement | null;
+  private readonly rememberInput: HTMLInputElement | null;
   private loginBtn: NodeListOf<HTMLButtonElement>;
   private isSubmit = false
 
@@ -28,7 +30,7 @@ export class FormLogin {
       const password = this.passwordInput?.value || ''
       const remember = this.rememberInput?.checked || false
       if (email && password) {
-        Xhr.Post<MyRequest<MusicTrack>>('http://localhost:5000/api/auth/authorization', {
+        Xhr.Post<MyRequest<MusicTrack>>(`${API_URL}/auth/authorization`, {
           email,
           password
         }).then(({ data: { id }, status, message }) => {
@@ -36,11 +38,11 @@ export class FormLogin {
             if (remember) {
               document.cookie = `user=${id}`
             }
-            sessionStorage.setItem('auth', `${id}`)
+            sessionStorage.setItem(StorageItemEnums.AUTH, `${id}`)
             if (resolve)resolve()
-            this.form.classList.remove('_open')
+            this.form.classList.remove(ClassEnums.OPEN)
             BodyBlock.unBlock()
-            this.changeTextIntroBtns('Log out')
+            this.changeTextIntroBtns(LOG_OUT)
             this.removeToDefault()
           } else {
             if (reject) reject(message)
@@ -51,7 +53,7 @@ export class FormLogin {
           this.isSubmit = false
         })
       } else {
-        throw Error('не предвиденная ошибка')
+        throw Error(ERROR_MASSAGES)
       }
     }
   }

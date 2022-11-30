@@ -1,3 +1,5 @@
+import { API_URL } from './constants/constants'
+
 export class DownloadSoundFile {
   private id: string | undefined;
   constructor (private button: HTMLButtonElement) {
@@ -16,7 +18,7 @@ export class DownloadSoundFile {
   }
 
   async downloadFile () {
-    const response = await fetch(`http://localhost:5000/api/download/download?id=${this.id}`)
+    const response = await fetch(`${API_URL}/download/download?id=${this.id}`)
     if (response.status === 200) {
       const blob = await response.blob()
       const downloadUrl = window.URL.createObjectURL(blob)

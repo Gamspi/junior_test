@@ -1,7 +1,9 @@
 import { Xhr } from './api/xhr/xhr'
+import { API_URL, ERROR_MASSAGES } from './constants/constants'
 import { SoundItemGeneration } from './soundItemGeneration'
 import { MusicTrack, MyRequest } from './types/types'
-import { ClassesEnums } from './utils/enums/classEnums'
+import { ClassEnums } from './utils/enums/classEnums'
+import { StorageItemEnums } from './utils/enums/storageItemEnums'
 
 export class FilterForm {
   private freeInput: HTMLInputElement | null
@@ -20,7 +22,7 @@ export class FilterForm {
     this.durationMinInput = form.querySelector('input#durationMin')
     this.durationMaxInput = form.querySelector('input#durationMax')
     this.categoriesInput = form.querySelector('input#categories')
-    this.userId = sessionStorage.getItem('auth')
+    this.userId = sessionStorage.getItem(StorageItemEnums.AUTH)
     this.soundsContainer = document.querySelector('.j-sounds-list')
   }
 
@@ -30,13 +32,13 @@ export class FilterForm {
       e.preventDefault()
       if (!this.isSubmit) {
         this.isSubmit = true
-        this.userId = sessionStorage.getItem('auth')
+        this.userId = sessionStorage.getItem(StorageItemEnums.AUTH)
         const isFree = this.freeInput?.checked
         const isFavorite = this.favoriteInput?.checked
         const durationMin = this.durationMinInput?.value
         const durationMax = this.durationMaxInput?.value
         const category = this.categoriesInput?.value
-        Xhr.Post<MyRequest<MusicTrack[]>>('http://localhost:5000/api/filter/sounds', {
+        Xhr.Post<MyRequest<MusicTrack[]>>(`${API_URL}/filter/sounds`, {
           isFree,
           isFavorite,
           durationMin,
@@ -46,15 +48,15 @@ export class FilterForm {
         }).then(({ data }) => {
           if (this.SoundItemGeneration && data) {
             if (this.SoundItemGeneration.list) this.SoundItemGeneration.list.innerHTML = ''
-            data.forEach(item => this.SoundItemGeneration?.itemGeneration(item))
+            this.SoundItemGeneration?.itemGeneration(data)
             this.SoundItemGeneration.itemInit()
           }
         }
         ).catch((e) => {
-          console.error('непредвиденная ошибка', e)
+          console.error(ERROR_MASSAGES, e)
         }).finally(() => {
           this.isSubmit = false
-          this.form.classList.remove(ClassesEnums.OPEN)
+          this.form.classList.remove(ClassEnums.OPEN)
         })
       }
     }

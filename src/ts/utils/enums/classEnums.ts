@@ -1,4 +1,4 @@
-export enum ClassesEnums {
+export enum ClassEnums {
   PLAY = '_play',
   CLICK = '_click',
   ACTIVE = '_active',

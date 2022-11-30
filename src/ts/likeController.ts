@@ -1,5 +1,7 @@
 import { Xhr } from './api/xhr/xhr'
+import { API_URL } from './constants/constants'
 import { MyRequest, MusicTrack } from './types/types'
+import { StorageItemEnums } from './utils/enums/storageItemEnums'
 
 export class LikeController {
   private id: string;
@@ -8,7 +10,7 @@ export class LikeController {
   constructor (private btn: HTMLInputElement) {
     this.id = this.btn.dataset.id || ''
     this.defaultChecked = this.btn.defaultChecked
-    this.userId = sessionStorage.getItem('auth')
+    this.userId = sessionStorage.getItem(StorageItemEnums.AUTH)
   }
 
   init () {
@@ -16,7 +18,7 @@ export class LikeController {
       const target = e.target as HTMLInputElement
       target.checked = this.defaultChecked
       this.btn.disabled = true
-      Xhr.Post<MyRequest<MusicTrack>>('http://localhost:5000/api/like/like', {
+      Xhr.Post<MyRequest<MusicTrack>>(`${API_URL}/like/like`, {
         id: this.id,
         user: this.userId
       }).then((response) => {

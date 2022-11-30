@@ -1,15 +1,14 @@
 import { Xhr } from './api/xhr/xhr'
+import { API_URL, ERROR_MASSAGES } from './constants/constants'
 import { SoundItemGeneration } from './soundItemGeneration'
 import { MusicTrack, MyRequest } from './types/types'
-import { ClassesEnums } from './utils/enums/classEnums'
+import { ClassEnums } from './utils/enums/classEnums'
 
 export class ChooseGenre extends SoundItemGeneration {
   private readonly tabs: NodeListOf<HTMLElement>;
   constructor (container: HTMLElement) {
     super(container)
     this.tabs = container.querySelectorAll('.j-sound-tab')
-    this.toggleActive = this.toggleActive.bind(this)
-    this.GetGenre = this.GetGenre.bind(this)
   }
 
   init () {
@@ -28,21 +27,21 @@ export class ChooseGenre extends SoundItemGeneration {
     })
   }
 
-  GetGenre (id?:string, finallyFunc?: ()=>void) {
-    Xhr.Get<MyRequest<MusicTrack[]>>('http://localhost:5000/api/genre', {
+  GetGenre = (id?:string, finallyFunc?: ()=>void) => {
+    Xhr.Get<MyRequest<MusicTrack[]>>(`${API_URL}/genre`, {
       id
     }).then(({ data }) => {
       if (this.list) this.list.innerHTML = ''
-      data.forEach(item => this.itemGeneration(item))
+      this.itemGeneration(data)
       this.itemInit()
     }).catch((e) => {
-      console.error('Не предвиденная ошибка', e)
+      console.error(ERROR_MASSAGES, e)
     }).finally(() => {
       if (finallyFunc) finallyFunc()
     })
   }
 
-  toggleActive (target: HTMLElement | undefined) {
-    this.tabs.forEach(elem => elem === target ? elem.classList.add(ClassesEnums.ACTIVE) : elem.classList.remove(ClassesEnums.ACTIVE))
+  toggleActive = (target: HTMLElement | undefined) => {
+    this.tabs.forEach(elem => elem === target ? elem.classList.add(ClassEnums.ACTIVE) : elem.classList.remove(ClassEnums.ACTIVE))
   }
 }

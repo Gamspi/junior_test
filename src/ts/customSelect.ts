@@ -1,8 +1,7 @@
-import { ClassesEnums } from './utils/enums/classEnums'
+import { ClassEnums } from './utils/enums/classEnums'
 import { EventEnums } from './utils/enums/eventEnums'
 
 class CalcSelect {
-  // eslint-disable-next-line no-undef
   private potions: NodeListOf<HTMLElement> | undefined
   private input: HTMLInputElement | null
   private body: HTMLElement | null
@@ -18,17 +17,15 @@ class CalcSelect {
   }
 
   init () {
-    this.ListenerBody = this.ListenerBody.bind(this)
-
     if (this.btn) {
       this.btn.onclick = () => {
         if (this.isOpen) {
           document.body.removeEventListener(EventEnums.CLICK, this.ListenerBody)
-          this.container.classList.remove(ClassesEnums.OPEN)
+          this.container.classList.remove(ClassEnums.OPEN)
           this.isOpen = false
         } else {
           document.body.addEventListener(EventEnums.CLICK, this.ListenerBody)
-          this.container.classList.add(ClassesEnums.OPEN)
+          this.container.classList.add(ClassEnums.OPEN)
           this.isOpen = true
         }
       }
@@ -38,7 +35,7 @@ class CalcSelect {
         if (this.input) {
           elem.onclick = () => {
             this.input!.value = elem.dataset.value || ''
-            this.container.classList.remove(ClassesEnums.OPEN)
+            this.container.classList.remove(ClassEnums.OPEN)
             if (this.func) this.func()
           }
         }
@@ -46,10 +43,10 @@ class CalcSelect {
     }
   }
 
-  ListenerBody (e: Event) {
+  ListenerBody = (e: Event) => {
     const target = e.target as HTMLElement
     if (!target.closest('.j-select-btn')) {
-      this.container.classList.remove(ClassesEnums.OPEN)
+      this.container.classList.remove(ClassEnums.OPEN)
       document.body.removeEventListener(EventEnums.CLICK, this.ListenerBody)
       this.isOpen = false
     }
