@@ -1,5 +1,5 @@
-import { Xhr } from './api/Xhr/Xhr'
-import { BodyBlock } from './BodyBlock'
+import { Xhr } from './api/xhr/xhr'
+import { BodyBlock } from './bodyBlock'
 import { MyRequest, MusicTrack } from './types/types'
 import { StatusEnums } from './utils/enums/statusEnums'
 

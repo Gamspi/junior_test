@@ -1,4 +1,4 @@
-import { FormLogin } from './FormLogin'
+import { FormLogin } from './formLogin'
 import { ClassesEnums } from './utils/enums/classEnums'
 
 export class ValidationLoginForm extends FormLogin {

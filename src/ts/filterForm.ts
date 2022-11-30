@@ -1,4 +1,4 @@
-import { Xhr } from './api/Xhr/Xhr'
+import { Xhr } from './api/xhr/xhr'
 import { SoundItemGeneration } from './soundItemGeneration'
 import { MusicTrack, MyRequest } from './types/types'
 import { ClassesEnums } from './utils/enums/classEnums'

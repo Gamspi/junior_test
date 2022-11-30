@@ -1,7 +1,7 @@
-import { AudioController } from './AudioController'
-import { ButtonClick } from './ButtonClick'
-import { DownloadSoundFile } from './DownloadSoundFile'
-import { LikeController } from './LikeController'
+import { AudioController } from './audioController'
+import { ButtonClick } from './buttonClick'
+import { DownloadSoundFile } from './downloadSoundFile'
+import { LikeController } from './likeController'
 import { MusicTrack } from './types/types'
 
 export class SoundItemGeneration {

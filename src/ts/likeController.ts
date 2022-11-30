@@ -1,4 +1,4 @@
-import { Xhr } from './api/Xhr/Xhr'
+import { Xhr } from './api/xhr/xhr'
 import { MyRequest, MusicTrack } from './types/types'
 
 export class LikeController {

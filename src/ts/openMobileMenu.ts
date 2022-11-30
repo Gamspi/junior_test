@@ -1,4 +1,4 @@
-import { BodyBlock } from './BodyBlock'
+import { BodyBlock } from './bodyBlock'
 import { ClassesEnums } from './utils/enums/classEnums'
 
 export class OpenMobileMenu {

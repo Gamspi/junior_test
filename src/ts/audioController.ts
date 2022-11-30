@@ -1,5 +1,5 @@
 import { ClassesEnums } from './utils/enums/classEnums'
-import { TimeConverter } from './utils/helpers/TimeConverter'
+import { TimeConverter } from './utils/helpers/timeConverter'
 
 export class AudioController {
   private readonly track: HTMLAudioElement | null

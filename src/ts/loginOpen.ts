@@ -1,6 +1,6 @@
-import { BodyBlock } from './BodyBlock'
+import { BodyBlock } from './bodyBlock'
 import { ClassesEnums } from './utils/enums/classEnums'
-import { CookeHelper } from './utils/helpers/CookeHelper'
+import { CookeHelper } from './utils/helpers/cookeHelper'
 
 export class LoginOpen {
   // eslint-disable-next-line no-undef
