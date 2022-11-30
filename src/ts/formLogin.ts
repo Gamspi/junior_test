@@ -1,7 +1,7 @@
 import { Xhr } from './api/xhr/xhr'
 import { BodyBlock } from './bodyBlock'
 import { API_URL, ERROR_MASSAGES, LOG_OUT } from './constants/constants'
-import { MyRequest, MusicTrack } from './types/types'
+import { MyRequest, MusicTrack, SubmitFormSuccessHandlerType } from './types/types'
 import { ClassEnums } from './utils/enums/classEnums'
 import { StatusEnums } from './utils/enums/statusEnums'
 import { StorageItemEnums } from './utils/enums/storageItemEnums'
@@ -28,25 +28,13 @@ export class FormLogin {
       this.isSubmit = true
       const email = this.emailInput?.value || ''
       const password = this.passwordInput?.value || ''
-      const remember = this.rememberInput?.checked || false
+
       if (email && password) {
         Xhr.Post<MyRequest<MusicTrack>>(`${API_URL}/auth/authorization`, {
           email,
           password
-        }).then(({ data: { id }, status, message }) => {
-          if (status === StatusEnums.SUCCESS) {
-            if (remember) {
-              document.cookie = `user=${id}`
-            }
-            sessionStorage.setItem(StorageItemEnums.AUTH, `${id}`)
-            if (resolve)resolve()
-            this.form.classList.remove(ClassEnums.OPEN)
-            BodyBlock.unBlock()
-            this.changeTextIntroBtns(LOG_OUT)
-            this.removeToDefault()
-          } else {
-            if (reject) reject(message)
-          }
+        }).then((response) => {
+          this.successHandler({ response, reject, resolve })
         }).catch((e) => {
           console.log(e)
         }).finally(() => {
@@ -55,6 +43,23 @@ export class FormLogin {
       } else {
         throw Error(ERROR_MASSAGES)
       }
+    }
+  }
+
+  successHandler = ({ response: { data: { id }, status, message }, resolve, reject }:SubmitFormSuccessHandlerType) => {
+    const isRemember = this.rememberInput?.checked
+    if (status === StatusEnums.SUCCESS) {
+      if (isRemember) {
+        document.cookie = `user=${id}`
+      }
+      sessionStorage.setItem(StorageItemEnums.AUTH, `${id}`)
+      if (resolve)resolve()
+      this.form.classList.remove(ClassEnums.OPEN)
+      BodyBlock.unBlock()
+      this.changeTextIntroBtns(LOG_OUT)
+      this.removeToDefault()
+    } else {
+      if (reject) reject(message)
     }
   }
 

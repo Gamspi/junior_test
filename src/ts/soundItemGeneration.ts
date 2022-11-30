@@ -19,7 +19,7 @@ export class SoundItemGeneration {
         element.classList.add('sounds-block__item')
         // при изменении информации в компоненте следует изменить ее и файле src/pages/index/modules/soundsBlock/components/soundItem/soundItem.pug
         element.innerHTML = `
-                        <div class="sound-item j-audio">
+                        <article class="sound-item j-audio">
                           <audio class="j-audio-track" src="${src}"></audio>
                           <div class="sound-item__btn-play">
                             <button class="play-button j-audio-play j-button-click">
@@ -59,7 +59,7 @@ export class SoundItemGeneration {
                                             <use xlink:href="#ico-more"></use>
                                           </svg></a>
                           </div>
-                        </div>
+                        </article>
               `
         this.list!.append(element)
         setTimeout(() => {

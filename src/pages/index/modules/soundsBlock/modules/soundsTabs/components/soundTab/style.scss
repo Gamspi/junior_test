@@ -7,6 +7,18 @@
   transition: color .15s linear;
   letter-spacing: -0.05rem;
   position: relative;
+  @media (hover: hover) {
+
+    &:hover {
+      color: $bgHoverBlue;
+
+      &:after {
+        opacity: .1;
+        background-color: $bgHoverBlue;
+      }
+    }
+  }
+
   &:after {
     content: '';
     height: .2rem;
@@ -21,10 +33,17 @@
   }
 
   &._active {
-    color: $secondaryColor;
+    //color: $secondaryColor;
+    @media (hover: hover) {
 
+      &:hover {
+        color: $bgHoverBlue;
+      }
+
+    }
 
     &:after {
+      transition: opacity .15s linear, color .15s linear;
       opacity: 1;
     }
 

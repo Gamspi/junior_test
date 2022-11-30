@@ -1,6 +1,6 @@
 mixin soundItem(src,genres,description)
     // при изменении информации в компоненте следует изменить ее и файле soundItemGeneration.ts
-    .sound-item.j-audio
+    article.sound-item.j-audio
         audio.j-audio-track(src=src)
         .sound-item__btn-play
             include components/playButton/playButton

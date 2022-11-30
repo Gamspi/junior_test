@@ -1,9 +1,11 @@
 .text-input {
   display: flex;
   flex-direction: column;
-  &__body{
+
+  &__body {
     position: relative;
   }
+
   &__label {
     font-weight: 500;
     font-size: 1.6rem;
@@ -21,34 +23,42 @@
     font-size: 1.4rem;
     line-height: 172%;
     padding: 1rem 2rem;
-    background: $bPrimary;
+    background: $bgPrimary;
     border-radius: .8rem;
     width: 100%;
     border-width: .1rem;
     border-style: solid;
     border-color: transparent;
     transition: border-color .15s linear, background-color .15s linear;
-    &[type='password']{
+
+    &[type='password'] {
       color: transparent;
-      caret-color:$cLightGreyBlue ;
+      caret-color: $cLightGreyBlue;
       letter-spacing: 1.15rem;
       padding-left: 1.4rem;
-      &::placeholder{
+
+      &::placeholder {
         color: $cGrey;
         letter-spacing: normal;
       }
     }
-    &:hover{
-      border-color: $bPrimarySvg;
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: $bPrimarySvg;
+      }
     }
-    &:focus{
+
+    &:focus {
       border-color: $bBlue;
     }
+
     &::placeholder {
       color: $cGrey;
     }
   }
-  &__password-mock{
+
+  &__password-mock {
     height: 5.2rem;
     color: $cLightBlue;
     font-size: 3.8rem;
@@ -62,6 +72,7 @@
     right: 0;
     z-index: 2;
   }
+
   &__input._error {
     border-color: $cError;
     background-color: transparentize($cError, .9);

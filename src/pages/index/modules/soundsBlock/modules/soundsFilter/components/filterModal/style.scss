@@ -2,7 +2,7 @@
   $size: 3.6rem;
   width: 0;
   max-height: $size;
-  background: $bPrimary;
+  background: $bgPrimary;
   z-index: 3;
   opacity: 0;
   transition: max-height .3s linear, width .3s linear .3s, opacity .3s linear .3s;

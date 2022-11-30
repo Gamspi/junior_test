@@ -40,7 +40,7 @@
     position: relative;
     border: 1px solid $cGrey;
     border-radius: .8rem;
-    background: $bPrimary;
+    background: $bgPrimary;
     z-index: 3;
     transition: border-radius .1s linear;
   }
@@ -68,7 +68,7 @@
     max-height: 4.4rem;
     transition: max-height .2s linear, padding-top .3s linear;
     z-index: 2;
-    background: $bPrimary;
+    background: $bgPrimary;
     border: 1px solid $bgGray;
     border-radius: .8rem;
     padding-top: 4.2rem;

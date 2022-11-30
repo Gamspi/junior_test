@@ -64,6 +64,8 @@
 
   &__btn {
     width: 100%;
+    padding-top: 1.9rem;
+    padding-bottom: 1.9rem;
     margin-bottom: 3.3rem;
   }
 
@@ -126,11 +128,10 @@
       height: auto;
       margin: auto;
       border-radius: 2.4rem;
+      overflow: hidden;
     }
 
     &__btn {
-      padding-top: 1.9rem;
-      padding-bottom: 1.9rem;
       margin-bottom: 2.4rem;
     }
   }

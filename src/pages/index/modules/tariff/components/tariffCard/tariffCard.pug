@@ -1,5 +1,5 @@
 mixin tariffCard(title, description, cost, isWhite)
-    .tariff-card._active(class=isWhite && 'tariff-card--white')
+    article.tariff-card._active(class=isWhite && 'tariff-card--white')
         h3.tariff-card__title=title
         p.tariff-card__description=description
         p.tariff-card__cost=cost

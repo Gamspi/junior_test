@@ -15,7 +15,8 @@
     height: 100%;
     width: 100%;
   }
-  &__link{
+
+  &__link {
     z-index: 2;
     display: flex;
     justify-content: center;
@@ -25,10 +26,13 @@
     line-height: 100%;
     color: $primaryColor;
     transition: background-color .15s linear;
-    &:hover{
-      text-decoration: underline;
-      background-color: transparentize($bgBlue, .75);
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+        background-color: transparentize($bgBlue, .75);
+      }
     }
+
   }
 
   @include minMediaTablet {
