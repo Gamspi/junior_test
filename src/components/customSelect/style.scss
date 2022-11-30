@@ -98,6 +98,7 @@
   &__list {
     overflow: auto;
     max-height: 30rem;
+    overscroll-behavior: contain
   }
 }
 
