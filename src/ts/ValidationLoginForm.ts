@@ -1,4 +1,5 @@
 import { FormLogin } from './FormLogin'
+import { ClassesEnums } from './utils/enums/classEnums'
 
 export class ValidationLoginForm extends FormLogin {
 private noValidArr: HTMLInputElement[] | undefined
@@ -15,21 +16,21 @@ constructor (form: HTMLFormElement) {
 init () {
   this.inputs.forEach(input => {
     input.onfocus = () => {
-      input.classList.remove('_error')
+      input.classList.remove(ClassesEnums.ERROR)
     }
     input.onblur = () => {
-      if (!input.validity.valid) input.classList.add('_error')
+      if (!input.validity.valid) input.classList.add(ClassesEnums.ERROR)
     }
   })
   this.form.onsubmit = e => {
     e.preventDefault()
-    if (this.errorBlock) this.errorBlock.classList.remove('_visible')
+    if (this.errorBlock) this.errorBlock.classList.remove(ClassesEnums.VISIBLE)
 
     this.noValidArr = Array.from(this.inputs).filter(input => !input.validity.valid)
     if (this.noValidArr && this.noValidArr.length) {
       this.form.querySelectorAll('input').forEach(input => {
         if (input.validity.valid) {
-          input.classList.remove('_error')
+          input.classList.remove(ClassesEnums.ERROR)
         } else {
           this.addError(input)
         }
@@ -38,7 +39,7 @@ init () {
       console.log('submit')
       super.logInSubmit(undefined, this.handelError.bind(this))
       this.inputs.forEach(input => {
-        input.classList.remove('_error')
+        input.classList.remove(ClassesEnums.ERROR)
       })
     }
   }
@@ -50,13 +51,13 @@ handelError (message: string) {
   })
   if (this.errorBlock) {
     this.errorBlock.innerHTML = message
-    this.errorBlock.classList.add('_visible')
+    this.errorBlock.classList.add(ClassesEnums.VISIBLE)
   }
 }
 
 addError (target: HTMLElement) {
   if (target) {
-    target.classList.add('_error')
+    target.classList.add(ClassesEnums.ERROR)
   }
 }
 }

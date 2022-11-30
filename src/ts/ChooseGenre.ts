@@ -1,10 +1,10 @@
 import { Xhr } from './api/Xhr/Xhr'
 import { SoundItemGeneration } from './soundItemGeneration'
 import { MusicTrack, MyRequest } from './types/types'
+import { ClassesEnums } from './utils/enums/classEnums'
 
 export class ChooseGenre extends SoundItemGeneration {
-  // eslint-disable-next-line no-undef
-  private tabs: NodeListOf<HTMLElement>;
+  private readonly tabs: NodeListOf<HTMLElement>;
   constructor (container: HTMLElement) {
     super(container)
     this.tabs = container.querySelectorAll('.j-sound-tab')
@@ -43,6 +43,6 @@ export class ChooseGenre extends SoundItemGeneration {
   }
 
   toggleActive (target: HTMLElement | undefined) {
-    this.tabs.forEach(elem => elem === target ? elem.classList.add('_active') : elem.classList.remove('_active'))
+    this.tabs.forEach(elem => elem === target ? elem.classList.add(ClassesEnums.ACTIVE) : elem.classList.remove(ClassesEnums.ACTIVE))
   }
 }

@@ -1,3 +1,6 @@
+import { ClassesEnums } from './utils/enums/classEnums'
+import { EventEnums } from './utils/enums/eventEnums'
+
 export class ButtonClick {
   private timeout: ReturnType<typeof setTimeout> | undefined
 
@@ -7,14 +10,14 @@ export class ButtonClick {
 
   init () {
     this.handelClick = this.handelClick.bind(this)
-    this.button.addEventListener('click', this.handelClick)
+    this.button.addEventListener(EventEnums.CLICK, this.handelClick)
   }
 
   handelClick () {
     if (this.timeout) clearTimeout(this.timeout)
-    this.button.classList.add('_click')
+    this.button.classList.add(ClassesEnums.CLICK)
     this.timeout = setTimeout(() => {
-      this.button.classList.remove('_click')
+      this.button.classList.remove(ClassesEnums.CLICK)
     }, 200)
   }
 }

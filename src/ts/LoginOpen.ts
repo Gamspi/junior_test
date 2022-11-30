@@ -1,4 +1,5 @@
 import { BodyBlock } from './BodyBlock'
+import { ClassesEnums } from './utils/enums/classEnums'
 import { CookeHelper } from './utils/helpers/CookeHelper'
 
 export class LoginOpen {
@@ -29,11 +30,11 @@ export class LoginOpen {
     this.openButtons.forEach(btn => {
       if (this.isAuth) btn.innerHTML = 'Log out'
       btn.onclick = () => {
-        if (this.menu) this.menu.classList.remove('_open')
+        if (this.menu) this.menu.classList.remove(ClassesEnums.OPEN)
         if (this.burger) this.burger.classList.remove('_active')
         this.isAuth = !!sessionStorage.getItem('auth')
         if (!this.isAuth) {
-          this.container.classList.add('_open')
+          this.container.classList.add(ClassesEnums.OPEN)
           BodyBlock.block()
         } else {
           CookeHelper.deleteCookie('user')
@@ -54,7 +55,7 @@ export class LoginOpen {
   }
 
   handelCloseForm () {
-    this.container.classList.remove('_open')
+    this.container.classList.remove(ClassesEnums.OPEN)
     BodyBlock.unBlock()
   }
 }

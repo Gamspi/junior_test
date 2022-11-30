@@ -1,3 +1,4 @@
+import { ClassesEnums } from './utils/enums/classEnums'
 import { TimeConverter } from './utils/helpers/TimeConverter'
 
 export class AudioController {
@@ -18,10 +19,10 @@ export class AudioController {
       this.playBtn.onclick = () => {
         if (!this.track?.paused) {
           this.track?.pause()
-          this.playBtn?.classList.remove('_play')
+          this.playBtn?.classList.remove(ClassesEnums.PLAY)
         } else {
           this.track?.play().then(() => {
-            this.playBtn?.classList.add('_play')
+            this.playBtn?.classList.add(ClassesEnums.PLAY)
           }).catch(() => console.log('Непредвиденная ошибка'))
         }
       }
@@ -32,7 +33,7 @@ export class AudioController {
         if (this.$time) this.$time.innerText = this.currentTime
       }
       this.track.onended = () => {
-        this.playBtn?.classList.remove('_play')
+        this.playBtn?.classList.remove(ClassesEnums.PLAY)
       }
     }
   }

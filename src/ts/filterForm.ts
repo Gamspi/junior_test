@@ -1,6 +1,7 @@
 import { Xhr } from './api/Xhr/Xhr'
 import { SoundItemGeneration } from './soundItemGeneration'
 import { MusicTrack, MyRequest } from './types/types'
+import { ClassesEnums } from './utils/enums/classEnums'
 
 export class FilterForm {
   private freeInput: HTMLInputElement | null
@@ -53,7 +54,7 @@ export class FilterForm {
           console.error('непредвиденная ошибка', e)
         }).finally(() => {
           this.isSubmit = false
-          this.form.classList.remove('_open')
+          this.form.classList.remove(ClassesEnums.OPEN)
         })
       }
     }

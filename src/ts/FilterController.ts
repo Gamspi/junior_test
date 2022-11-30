@@ -1,4 +1,6 @@
 import { FilterForm } from './filterForm'
+import { ClassesEnums } from './utils/enums/classEnums'
+import { EventEnums } from './utils/enums/eventEnums'
 
 export class FilterController {
   private modal: HTMLFormElement | null
@@ -15,14 +17,14 @@ export class FilterController {
   init () {
     if (this.closeBtn) {
       this.closeBtn.onclick = () => {
-        this.modal?.classList.remove('_open')
-        document.body.removeEventListener('click', this.ListenerBody)
+        this.modal?.classList.remove(ClassesEnums.OPEN)
+        document.body.removeEventListener(EventEnums.CLICK, this.ListenerBody)
       }
     }
     if (this.openBtn) {
       this.openBtn.onclick = () => {
-        this.modal?.classList.add('_open')
-        document.body.addEventListener('click', this.ListenerBody)
+        this.modal?.classList.add(ClassesEnums.OPEN)
+        document.body.addEventListener(EventEnums.CLICK, this.ListenerBody)
       }
     }
 
@@ -35,8 +37,8 @@ export class FilterController {
   ListenerBody (e: Event) {
     const target = e.target as HTMLElement
     if (this.modal && !target.closest('.j-filter')) {
-      this.modal.classList.remove('_open')
-      document.body.removeEventListener('click', this.ListenerBody)
+      this.modal.classList.remove(ClassesEnums.OPEN)
+      document.body.removeEventListener(EventEnums.CLICK, this.ListenerBody)
     }
   }
 }

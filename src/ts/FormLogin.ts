@@ -1,7 +1,7 @@
 import { Xhr } from './api/Xhr/Xhr'
 import { BodyBlock } from './BodyBlock'
 import { MyRequest, MusicTrack } from './types/types'
-import { Status } from './utils/enums/status'
+import { StatusEnums } from './utils/enums/statusEnums'
 
 export class FormLogin {
   private emailInput: HTMLInputElement | null;
@@ -32,7 +32,7 @@ export class FormLogin {
           email,
           password
         }).then(({ data: { id }, status, message }) => {
-          if (status === Status.SUCCESS) {
+          if (status === StatusEnums.SUCCESS) {
             if (remember) {
               document.cookie = `user=${id}`
             }

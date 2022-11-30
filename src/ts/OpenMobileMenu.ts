@@ -1,4 +1,5 @@
 import { BodyBlock } from './BodyBlock'
+import { ClassesEnums } from './utils/enums/classEnums'
 
 export class OpenMobileMenu {
   private burger: HTMLButtonElement | null
@@ -13,13 +14,13 @@ export class OpenMobileMenu {
     if (this.burger) {
       this.burger.onclick = () => {
         if (this.menu) {
-          this.menu.classList.toggle('_open')
-          if (this.menu.classList.contains('_open')) {
+          this.menu.classList.toggle(ClassesEnums.OPEN)
+          if (this.menu.classList.contains(ClassesEnums.OPEN)) {
             BodyBlock.block()
-            this.burger?.classList.add('_active')
+            this.burger?.classList.add(ClassesEnums.ACTIVE)
           } else {
             BodyBlock.unBlock()
-            this.burger?.classList.remove('_active')
+            this.burger?.classList.remove(ClassesEnums.ACTIVE)
           }
         }
       }
