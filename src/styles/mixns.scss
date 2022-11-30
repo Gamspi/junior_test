@@ -1,5 +1,15 @@
 @import "variables";
 
+@mixin fontFace ($family, $weight){
+  @font-face {
+    font-family: $family;
+    src: url('/src/fonts/#{to-lower-case($family)}/#{to-lower-case($family)}#{$weight}.woff2') format('woff2'),
+    url('/src/fonts/#{to-lower-case($family)}/#{to-lower-case($family)}#{$weight}.woff') format('woff');
+    font-weight: $weight;
+    font-style: normal;
+  }
+}
+
 @mixin minMediaMobile {
   @media (min-width: $mobileBreakpoint + px) {
     @content
