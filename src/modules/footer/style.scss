@@ -59,23 +59,25 @@
     }
   }
   @include minMediaDesktop {
-    padding: 5.175rem 0 4.2rem;
+    padding: 5rem 0 4.2rem;
     &__container {
       display: flex;
-      column-gap: 14.7rem;
+      column-gap: 15.2rem;
       padding: 0 10rem 0 10rem;
     }
     &__description {
       font-size: 1.6rem;
       line-height: 180%;
       margin-bottom: 2.9rem;
+      letter-spacing: -0.08rem;
     }
     &__logo {
       width: 17rem;
       height: 2.55rem;
+      margin-bottom: 2.6rem;
     }
     &__info {
-      max-width: 30.4rem;
+      max-width: 29.8rem;
       margin-bottom: 0;
     }
     &__nav {
@@ -86,7 +88,11 @@
       column-gap: 10rem;
     }
     &__item {
+      margin-right: 0.3rem;
       flex-grow: 0;
+    }
+    &__copy{
+      letter-spacing: 0.018rem;
     }
   }
 }

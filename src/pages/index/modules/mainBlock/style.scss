@@ -64,11 +64,12 @@
 
   @include minMediaTablet {
     padding-top: 16.9rem;
-    padding-bottom: 12.7rem;
+    padding-bottom: 12.5rem;
     &__title {
       font-size: 3.6rem;
       line-height: 146.5%;
       margin-bottom: 1.7rem;
+      letter-spacing: -0.07rem;
     }
     &__description {
       font-size: 1.8rem;
@@ -84,6 +85,10 @@
     &__search {
       max-width: 60rem;
       margin: 0 auto;
+      padding-bottom: 5.1rem;
+    }
+    &__info {
+      letter-spacing: 0.01rem;
     }
   }
   @include minMediaDesktop {
@@ -92,6 +97,7 @@
     &__description {
       font-size: 2rem;
       line-height: 170%;
+      letter-spacing: -0.111rem;
     }
   }
 }

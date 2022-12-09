@@ -36,6 +36,7 @@
 
   @include minMediaTablet {
     padding: 0.6rem 2.1rem 0.2rem;
+
     &__btn-play {
       margin-right: 2.9rem;
     }
@@ -99,6 +100,7 @@
     }
     &__name {
       margin-bottom: 0.4rem;
+      letter-spacing: -.07rem;
     }
     &__genre {
       font-family: $fInter;
@@ -124,7 +126,7 @@
       padding-right: 6rem;
       font-weight: 500;
       display: block;
-      letter-spacing: -.05rem
+      letter-spacing: -.08rem
     }
   }
 }

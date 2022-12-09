@@ -56,4 +56,16 @@
     height: 100%;
     object-fit: cover;
   }
+  @include minMediaTablet{
+    &__quote {
+      letter-spacing: -0.03rem;
+    }
+  }
+  @include minMediaDesktop{
+    &__quote {
+      letter-spacing: 0;
+    }
+  }
+
+
 }
