@@ -31,7 +31,8 @@
     margin-right: 1rem;
   }
 
-  &__list {
+  &__list-container {
+    transition: height .3s linear;
     margin-bottom: 1.7rem;
   }
 
@@ -58,7 +59,7 @@
       margin-bottom: 1.8rem;
       letter-spacing: -0.06rem;
     }
-    &__list {
+    &__list-container  {
       margin-bottom: 2.3rem;
     }
     &__header {
@@ -70,7 +71,8 @@
     &__container {
       padding: 0 10rem;
       max-width: 124.4rem;
-      margin: 0 auto;    }
+      margin: 0 auto;
+    }
     &__title {
       font-size: 2.8rem;
       line-height: 4.5rem;
