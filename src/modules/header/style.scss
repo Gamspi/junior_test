@@ -54,7 +54,7 @@
 
   }
 
-  &__panel-contaner {
+  &__panel-container {
     overflow: auto;
     height: 100%;
     max-height: 100%;
@@ -77,8 +77,9 @@
         background-color: transparentize($bgHeaderColor, 0.4);
       }
     }
-    &__panel-contaner {
+    &__panel-container {
       height: auto;
+      padding-left: 8.4rem;
     }
   }
   @include minMediaDesktop {
@@ -92,7 +93,7 @@
     &__burger {
       display: none;
     }
-    &__panel-contaner {
+    &__panel-container {
       display: flex;
       align-items: center;
       column-gap: 5.3rem;
