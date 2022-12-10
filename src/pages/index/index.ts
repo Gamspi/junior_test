@@ -1,15 +1,13 @@
 import './index.scss'
 import { AudioController } from '../../ts/audioController'
 import { ButtonClick } from '../../ts/buttonClick'
-import { ChooseGenre } from '../../ts/chooseGenre'
-import { SearchForm } from '../../ts/searchForm'
 import CardSwiper from '../../ts/swiper'
 import { OpenMobileMenu } from '../../ts/openMobileMenu'
 import { LoginOpen } from '../../ts/loginOpen'
-import { ValidationLoginForm } from '../../ts/validationLoginForm'
 import { FilterController } from '../../ts/filterController'
 import SliderInput from '../../ts/sliderInput'
 import CustomSelect from '../../ts/customSelect'
+import { AudioObserver } from '../../ts/audioObserver'
 
 class Index {
   constructor () {
@@ -37,11 +35,7 @@ class Index {
         const loginOpen = new LoginOpen(block as HTMLDivElement)
         loginOpen.init()
       })
-    document.querySelectorAll('.j-login-form')
-      .forEach(block => {
-        const validationForm = new ValidationLoginForm(block as HTMLFormElement)
-        validationForm.init()
-      })
+
     document.querySelectorAll('.j-filter')
       .forEach(block => {
         const filterController = new FilterController(block as HTMLDivElement)
@@ -57,20 +51,16 @@ class Index {
         const customSelect = new CustomSelect(block as HTMLDivElement)
         customSelect.init()
       })
-    document.querySelectorAll('.j-sounds-list')
-      .forEach(block => {
-        const chooseGenre = new ChooseGenre(block as HTMLDivElement)
-        chooseGenre.init()
-      })
-    document.querySelectorAll('.j-search')
-      .forEach(block => {
-        const searchForm = new SearchForm(block as HTMLFormElement)
-        searchForm.init()
-      })
+
     document.querySelectorAll('.j-audio')
       .forEach(block => {
         const audioController = new AudioController(block as HTMLDivElement)
         audioController.init()
+      })
+    document.querySelectorAll('.j-sound-list')
+      .forEach(block => {
+        const audioInit = new AudioObserver(block as HTMLDivElement)
+        audioInit.init()
       })
   }
 }

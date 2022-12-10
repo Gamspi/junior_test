@@ -1,5 +1,3 @@
-export const API_URL = 'http://localhost:5000/api'
 export const ERROR_MASSAGES = 'Не предвиденная ошибка'
-export const SUBMIT_MASSAGES = 'submit'
 export const LOGIN = 'Login'
 export const LOG_OUT = 'Log out'

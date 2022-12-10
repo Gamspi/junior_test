@@ -1,4 +1,3 @@
-import { FilterForm } from './filterForm'
 import { ClassEnums } from './utils/enums/classEnums'
 import { EventEnums } from './utils/enums/eventEnums'
 
@@ -25,11 +24,6 @@ export class FilterController {
         this.modal?.classList.add(ClassEnums.OPEN)
         document.body.addEventListener(EventEnums.CLICK, this.ListenerBody)
       }
-    }
-
-    if (this.modal) {
-      const filterForm = new FilterForm(this.modal)
-      filterForm.init()
     }
   }
 
