@@ -32,9 +32,8 @@
     transition: border-color .15s linear, background-color .15s linear;
 
     &[type='password'] {
-      color: transparent;
+      color: $bBlue;
       caret-color: $cLightGreyBlue;
-      letter-spacing: 1.15rem;
       padding-left: 1.4rem;
 
       &::placeholder {

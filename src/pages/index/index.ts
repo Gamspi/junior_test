@@ -2,7 +2,6 @@ import './index.scss'
 import { AudioController } from '../../ts/audioController'
 import { ButtonClick } from '../../ts/buttonClick'
 import { ChooseGenre } from '../../ts/chooseGenre'
-import { PasswordInput } from '../../ts/passwordInput'
 import { SearchForm } from '../../ts/searchForm'
 import CardSwiper from '../../ts/swiper'
 import { OpenMobileMenu } from '../../ts/openMobileMenu'
@@ -62,11 +61,6 @@ class Index {
       .forEach(block => {
         const chooseGenre = new ChooseGenre(block as HTMLDivElement)
         chooseGenre.init()
-      })
-    document.querySelectorAll('.j-password')
-      .forEach(block => {
-        const passwordInput = new PasswordInput(block as HTMLDivElement)
-        passwordInput.init()
       })
     document.querySelectorAll('.j-search')
       .forEach(block => {
