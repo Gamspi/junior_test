@@ -5,6 +5,10 @@
     padding: 3rem 1.76rem 4rem;
   }
 
+  &__img {
+    object-fit: contain;
+  }
+
   &__title {
     font-family: $fInter;
     font-weight: 600;
