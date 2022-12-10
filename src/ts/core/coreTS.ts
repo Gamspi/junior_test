@@ -92,6 +92,9 @@ class Xhr {
 }
 
 // работа с аудио звуками
+/**
+ * класс для скачивания аудио фалов
+ */
 class DownloadSoundFile {
   private id: string | undefined
 
