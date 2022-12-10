@@ -10,7 +10,7 @@
   background: $bgHeaderColor;
   height: $headerHeight;
   z-index: 10;
-
+  border-bottom: .1rem solid rgba(255, 255, 255, 0.1);
   &__container {
     display: flex;
     justify-content: space-between;
@@ -20,7 +20,7 @@
     padding-right: 2.8rem;
     background: $bgHeaderColor;
     z-index: 1;
-    border-bottom: .1rem solid rgba(255, 255, 255, 0.1);
+
   }
 
   &__logo {
@@ -86,6 +86,8 @@
     &__container {
       padding: 0 10rem;
       z-index: auto;
+      max-width: 124.4rem;
+      margin: 0 auto;
     }
     &__burger {
       display: none;
